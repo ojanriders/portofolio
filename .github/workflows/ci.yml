@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: HTMLHint
+        run: npm run lint:html
+
+      - name: Prepare link checker reports directory
+        run: mkdir -p reports/lychee
+
+      - name: Link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true
+        with:
+          args: --no-progress --config .lychee.toml --format markdown --output ./reports/lychee/report.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload link checker report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-checker-report
+          path: reports/lychee/report.md
+
+      - name: Fail if broken links are found
+        if: steps.lychee.outcome == 'failure'
+        run: |
+          echo "Broken links detected by lychee. See link-checker-report artifact for details." >&2
+          exit 1
+
+      - name: Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v10
+        continue-on-error: true
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: false
+
+      - name: Fail if Lighthouse assertions fail
+        if: steps.lighthouse.outcome == 'failure'
+        run: |
+          echo "Lighthouse CI assertions failed. Download the lighthouse-report artifact for details." >&2
+          exit 1
