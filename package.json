@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "vitest run"
+    "test": "vitest run",
+    "polish:about": "node scripts/polish-about.js"
   },
   "dependencies": {
     "@vercel/node": "^3.0.11",

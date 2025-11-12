@@ -3,8 +3,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import handler, { parseBody } from '../api/hire.js';
 import { summarizeMessage } from '../lib/summarize.js';
 
-const sendMailMock = vi.fn();
-const createTransportMock = vi.fn(() => ({ sendMail: sendMailMock }));
+const { sendMailMock, createTransportMock } = vi.hoisted(() => {
+  const sendMail = vi.fn();
+  const createTransport = vi.fn(() => ({ sendMail }));
+  return { sendMailMock: sendMail, createTransportMock: createTransport };
+});
 
 vi.mock('nodemailer', () => ({
   __esModule: true,
@@ -71,6 +74,8 @@ describe('handler', () => {
     vi.clearAllMocks();
     sendMailMock.mockReset();
     createTransportMock.mockReset();
+    createTransportMock.mockImplementation(() => ({ sendMail: sendMailMock }));
+    sendMailMock.mockResolvedValue(undefined);
     delete process.env.GMAIL_USER;
     delete process.env.GMAIL_APP_PASSWORD;
     delete process.env.GMAIL_TO;
