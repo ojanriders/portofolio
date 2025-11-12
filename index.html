@@ -591,25 +591,12 @@
           <span class="t t-en">Testimonials</span>
         </h2>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal">
-            <blockquote class="text-slate-200/90 text-sm t t-id">“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”</blockquote>
-            <blockquote class="text-slate-200/90 text-sm t t-en">“Fauzan responds quickly and keeps documentation neat. Helpdesk escalations became far more organized.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Randi, Recruitment</figcaption>
-          </figure>
-
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal delay-1">
-            <blockquote class="text-slate-200/90 text-sm t t-id">“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”</blockquote>
-            <blockquote class="text-slate-200/90 text-sm t t-en">“Nationwide shift coordination was smooth. Communicative and reliable during busy events.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Pujo, IT Ops</figcaption>
-          </figure>
-
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal delay-2">
-            <blockquote class="text-slate-200/90 text-sm t t-id">“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”</blockquote>
-            <blockquote class="text-slate-200/90 text-sm t t-en">“Proactive in providing solutions; from networking to MDM, everything was handled.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Karis, GA</figcaption>
-          </figure>
+        <div id="testimonialsGrid" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+          <p class="text-sm text-slate-400 col-span-full" data-state="loading">Memuat testimonial…</p>
         </div>
+        <noscript>
+          <p class="text-sm text-slate-400 mt-4">Aktifkan JavaScript untuk melihat testimonial.</p>
+        </noscript>
       </div>
     </section>
 
@@ -653,6 +640,7 @@
     </div>
   </footer>
 
+  <script type="module" src="lib/testimonials.js"></script>
   <script>
     // Tahun footer
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -672,12 +660,19 @@
     // Bahasa: ID/EN dengan localStorage (default ID)
     const langBtn = document.getElementById('langToggle');
     const savedLang = localStorage.getItem('lang') || 'id';
-    root.setAttribute('data-lang', savedLang);
+    const applyLanguage = (lang) => {
+      const normalized = lang === 'en' ? 'en' : 'id';
+      root.setAttribute('data-lang', normalized);
+      localStorage.setItem('lang', normalized);
+      document.dispatchEvent(new CustomEvent('languagechange', { detail: normalized }));
+    };
+
+    applyLanguage(savedLang);
+
     langBtn?.addEventListener('click', () => {
       const current = root.getAttribute('data-lang') === 'en' ? 'en' : 'id';
       const next = current === 'en' ? 'id' : 'en';
-      root.setAttribute('data-lang', next);
-      localStorage.setItem('lang', next);
+      applyLanguage(next);
     });
 
     // Tampilkan logo bila avatar.jpg tersedia tanpa menyebabkan layout shift
