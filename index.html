@@ -48,6 +48,16 @@
     .delay-3{transition-delay:.45s;}
     .delay-4{transition-delay:.6s;}
 
+    .skip-link{position:absolute;top:-120px;left:50%;transform:translateX(-50%);background:#0f172a;color:#f8fafc;padding:.75rem 1.25rem;border-radius:.75rem;font-weight:600;box-shadow:0 12px 30px -18px rgba(15,23,42,.9);transition:top .3s ease,opacity .3s ease;opacity:0;z-index:50;}
+    .skip-link:focus{top:1rem;opacity:1;outline:2px solid var(--accent-from);outline-offset:3px;}
+
+    .logo-slot{position:relative;display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;border:2px solid rgba(16,185,129,.35);background:rgba(15,23,42,.85);overflow:hidden;color:#f8fafc;font-weight:600;letter-spacing:.02em;}
+    .logo-fallback{transition:opacity .3s ease;}
+    .logo-slot.has-image .logo-fallback{opacity:0;}
+    .logo-slot.logo-missing{border-color:rgba(148,163,184,.35);}
+    .logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
+    .logo-slot.has-image .logo-img{opacity:1;}
+
     /* Light theme overrides */
     [data-theme="light"] body{color:#111827!important;background:#f8fafc!important}
     [data-theme="light"] .glass{background:rgba(255,255,255,.85);border-color:#e2e8f0;color:#111827}
@@ -66,22 +76,39 @@
 
     @keyframes accentShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
     @keyframes floatGlow{0%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(0,-18px,0) scale(1.05);}100%{transform:translate3d(0,10px,0) scale(.98);}}
+    @keyframes heroFloat{0%{transform:translate3d(0,0,0);}50%{transform:translate3d(0,-14px,0);}100%{transform:translate3d(0,6px,0);}}
+
+    @media (prefers-reduced-motion: no-preference){
+      .logo-slot{transition:transform .6s cubic-bezier(.22,1,.36,1),border-color .3s ease;}
+      .logo-slot:hover{transform:translateY(-2px);border-color:rgba(20,184,166,.55);}
+      .logo-img{transition:opacity .4s ease;}
+      .hero-card-floating{animation:heroFloat 18s ease-in-out infinite alternate;}
+      .interactive-cta{transition:transform .3s ease,box-shadow .3s ease;}
+      .interactive-cta:hover,
+      .interactive-cta:focus-visible{transform:translateY(-2px);box-shadow:0 18px 36px -20px rgba(20,184,166,.55);}
+    }
 
     @media (prefers-reduced-motion: reduce){
       .accent{animation:none;}
       .glow-orb{animation:none;}
       .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+      .interactive-cta{transition:none!important;}
+      .logo-slot{transition:none;}
     }
   </style>
 </head>
 <body class="bg-base-900 text-slate-100 leading-relaxed selection:bg-emerald-500/30 selection:text-white transition-colors duration-300" id="bodyRoot">
+  <a href="#mainContent" class="skip-link">Lewati ke konten utama</a>
   <!-- NAV -->
-  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-base-900/70 backdrop-blur" id="siteHeader">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-base-900/70 backdrop-blur" id="siteHeader" role="banner">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Navigasi utama">
       <div class="flex items-center gap-3">
         <!-- Upload avatar.jpg (sejajar index.html) untuk logo foto -->
-        <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" class="hidden h-8 w-8 rounded-full ring-2 ring-emerald-500/50 object-cover" onerror="this.classList.add('hidden')">
-        <a href="#top" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
+        <span class="logo-slot">
+          <span class="logo-fallback" aria-hidden="true">F</span>
+          <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" width="32" height="32" class="logo-img" loading="lazy">
+        </span>
+        <a href="#mainContent" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
       </div>
 
       <div class="hidden md:flex items-center gap-4 text-sm text-slate-300">
@@ -103,8 +130,8 @@
         <a href="#contact" class="hover:text-white t t-id">Kontak</a>
         <a href="#contact" class="hover:text-white t t-en">Contact</a>
 
-        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="hover:text-white t t-id" target="_blank" download>CV (PDF-ID)</a>
-        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="hover:text-white t t-en" target="_blank" download>CV (PDF-EN)</a>
+        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="hover:text-white t t-id" target="_blank" rel="noopener" download>CV (PDF-ID)</a>
+        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="hover:text-white t t-en" target="_blank" rel="noopener" download>CV (PDF-EN)</a>
 
         <!-- Switchers -->
         <div class="flex items-center gap-2 ml-2">
@@ -118,7 +145,7 @@
     </nav>
   </header>
 
-  <main id="top" class="relative overflow-hidden">
+  <main id="mainContent" class="relative overflow-hidden" role="main">
     <!-- Glow background -->
     <div class="absolute inset-0 opacity-25 pointer-events-none">
       <div class="accent glow-orb absolute -top-24 -right-16 h-72 w-72 rounded-full blur-3xl"></div>
@@ -126,10 +153,10 @@
     </div>
 
     <!-- HERO -->
-    <section class="relative max-w-6xl mx-auto px-4 pt-12 md:pt-20 pb-10 reveal">
+    <section class="relative max-w-6xl mx-auto px-4 pt-12 md:pt-20 pb-10 reveal" aria-labelledby="hero-title">
       <div class="grid gap-6 lg:grid-cols-3 items-stretch">
         <div class="lg:col-span-2 reveal">
-          <h1 class="text-3xl md:text-5xl font-semibold leading-tight">Muhammad Fauzan</h1>
+          <h1 id="hero-title" class="text-3xl md:text-5xl font-semibold leading-tight">Muhammad Fauzan</h1>
           <p class="mt-2 text-lg md:text-xl text-slate-300 muted t t-id">IT Infrastructure & Support · Project Management</p>
           <p class="mt-2 text-lg md:text-xl text-slate-300 muted t t-en">IT Infrastructure & Support · Project Management</p>
 
@@ -143,11 +170,11 @@
           </p>
 
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id" target="_blank" download>Download CV (PDF-ID)</a>
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en" target="_blank" download>Download CV (PDF-EN)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-EN)</a>
 
-            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-id">Chat via WhatsApp</a>
-            <a href="https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-en">Chat via WhatsApp</a>
+            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-id interactive-cta" rel="noopener">Chat via WhatsApp</a>
+            <a href="https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-en interactive-cta" rel="noopener">Chat via WhatsApp</a>
           </div>
 
           <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300/90">
@@ -158,9 +185,9 @@
           </div>
         </div>
 
-        <aside class="lg:col-span-1 reveal delay-1">
-          <div class="rounded-2xl glass border border-slate-700 p-5 h-full">
-            <h3 class="text-white text-base font-semibold mb-3 t t-id">Ringkas Keahlian</h3>
+        <aside class="lg:col-span-1 reveal delay-1" role="complementary" aria-labelledby="skills-title">
+          <div class="rounded-2xl glass border border-slate-700 p-5 h-full hero-card-floating">
+            <h3 id="skills-title" class="text-white text-base font-semibold mb-3 t t-id">Ringkas Keahlian</h3>
             <h3 class="text-white text-base font-semibold mb-3 t t-en">Key Skills</h3>
 
             <ul class="grid grid-cols-2 gap-2 text-xs">
@@ -194,10 +221,10 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-16 md:py-20">
+    <section id="about" class="py-16 md:py-20" aria-labelledby="about-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="about-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Tentang Saya</span>
           <span class="t t-en">About Me</span>
         </h2>
@@ -242,10 +269,10 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="experience" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="experience-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="experience-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Pengalaman Kerja</span>
           <span class="t t-en">Work Experience</span>
         </h2>
@@ -339,10 +366,10 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="projects" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="projects-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="projects-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Proyek Terpilih</span>
           <span class="t t-en">Selected Projects</span>
         </h2>
@@ -408,10 +435,10 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="cert" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="cert" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="cert-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="cert-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Sertifikasi & Pembelajaran</span>
           <span class="t t-en">Certifications & Learning</span>
         </h2>
@@ -419,49 +446,49 @@
         <p class="text-xs text-slate-400 mt-2"><!-- TIP: Link sudah diisi. Tambah / ganti sesuai kebutuhan. --></p>
 
         <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="https://www.coursera.org/account/accomplishments/professional-cert/IND2C8ZPXWEZ" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-1 hover:ring-emerald-500/40 reveal">
+          <a href="https://www.coursera.org/account/accomplishments/professional-cert/IND2C8ZPXWEZ" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-1 hover:ring-emerald-500/40 reveal">
             <span class="text-slate-200 text-sm t t-id">Google IT Support</span>
             <span class="text-slate-200 text-sm t t-en">Google IT Support</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
           </a>
 
-          <a href="https://www.cyberacademy.id/certificate/WPTR0112244245" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
+          <a href="https://www.cyberacademy.id/certificate/WPTR0112244245" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
             <span class="text-slate-200 text-sm t t-id">Web Penetration Testing</span>
             <span class="text-slate-200 text-sm t t-en">Web Penetration Testing</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
           </a>
 
-          <a href="https://www.cyberacademy.id/certificate/NTPT0107242054" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
+          <a href="https://www.cyberacademy.id/certificate/NTPT0107242054" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
             <span class="text-slate-200 text-sm t t-id">Network Penetration Testing</span>
             <span class="text-slate-200 text-sm t t-en">Network Penetration Testing</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
           </a>
 
-          <a href="https://www.coursera.org/account/accomplishments/specialization/JM58T9D5P9B1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-3">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/JM58T9D5P9B1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-3">
             <span class="text-slate-200 text-sm t t-id">Google Project Management Specialization</span>
             <span class="text-slate-200 text-sm t t-en">Google Project Management Specialization</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
           </a>
 
-          <a href="https://www.cyberacademy.id/certificate/DFA0103250752" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-4">
+          <a href="https://www.cyberacademy.id/certificate/DFA0103250752" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-4">
             <span class="text-slate-200 text-sm t t-id">Digital Forensic Analyst</span>
             <span class="text-slate-200 text-sm t t-en">Digital Forensic Analyst</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
           </a>
 
-          <a href="https://www.cyberacademy.id/certificate/SOCA0110243535" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal">
+          <a href="https://www.cyberacademy.id/certificate/SOCA0110243535" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal">
             <span class="text-slate-200 text-sm t t-id">Security Operation Center (SOC) Analyst</span>
             <span class="text-slate-200 text-sm t t-en">Security Operation Center (SOC) Analyst</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
           </a>
 
-          <a href="#" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
+          <a href="#" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
             <span class="text-slate-200 text-sm t t-id">MikroTik Certified Network Associate (ID 2301NA285)</span>
             <span class="text-slate-200 text-sm t t-en">MikroTik Certified Network Associate (ID 2301NA285)</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">MikroTik</span>
           </a>
 
-          <a href="https://www.credly.com/badges/799e0823-6faf-4ea5-a366-a845945d1562/linked_in_profile" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
+          <a href="https://www.credly.com/badges/799e0823-6faf-4ea5-a366-a845945d1562/linked_in_profile" target="_blank" rel="noopener" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
             <span class="text-slate-200 text-sm t t-id">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span>
             <span class="text-slate-200 text-sm t t-en">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Fortinet</span>
@@ -471,10 +498,10 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testi" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="testi" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="testi-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="testi-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Testimonial</span>
           <span class="t t-en">Testimonials</span>
         </h2>
@@ -502,10 +529,10 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="contact" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="contact-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+        <h2 id="contact-title" class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
+          <span class="h-5 w-5 rounded-full accent inline-block" aria-hidden="true"></span>
           <span class="t t-id">Kontak</span>
           <span class="t t-en">Contact</span>
         </h2>
@@ -523,18 +550,18 @@
           </div>
 
           <div class="lg:justify-self-end flex flex-wrap gap-3 reveal delay-1">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id" target="_blank" download>Download CV (PDF-ID)</a>
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en" target="_blank" download>Download CV (PDF-EN)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-EN)</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 border-t border-slate-800/80">
+  <footer class="py-10 border-t border-slate-800/80" role="contentinfo">
     <div class="max-w-6xl mx-auto px-4 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
       <p>© <span id="year"></span> Muhammad Fauzan. All rights reserved.</p>
-      <a href="#top" class="hover:text-slate-200">
+      <a href="#mainContent" class="hover:text-slate-200">
         <span class="t t-id">Kembali ke atas</span>
         <span class="t t-en">Back to top</span>
       </a>
@@ -568,10 +595,22 @@
       localStorage.setItem('lang', next);
     });
 
-    // Tampilkan logo bila avatar.jpg tersedia
-    fetch('avatar.jpg', { method:'HEAD' })
-      .then(r => { if (r.ok) document.getElementById('logoImg').classList.remove('hidden'); })
-      .catch(() => {});
+    // Tampilkan logo bila avatar.jpg tersedia tanpa menyebabkan layout shift
+    const logoImg = document.getElementById('logoImg');
+    const logoSlot = logoImg?.closest('.logo-slot');
+    const revealLogo = () => logoSlot?.classList.add('has-image');
+    if (logoImg && logoSlot) {
+      if (logoImg.complete && logoImg.naturalWidth > 0) {
+        revealLogo();
+      } else {
+        logoImg.addEventListener('load', revealLogo, { once: true });
+      }
+
+      logoImg.addEventListener('error', () => {
+        logoSlot.classList.remove('has-image');
+        logoSlot.classList.add('logo-missing');
+      }, { once: true });
+    }
 
     // Animasi reveal saat scroll
     const motionQuery = typeof window.matchMedia === 'function'
