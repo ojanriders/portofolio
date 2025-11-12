@@ -1,25 +1,23 @@
 <!doctype html>
-<html lang="id" data-theme="dark">
+<html lang="id" data-theme="dark" data-lang="id">
 <head>
   <meta charset="utf-8" />
 
+  <!-- Redirect otomatis dari HTTP ke HTTPS -->
   <script>
-  // Redirect otomatis dari HTTP ke HTTPS
-  if (window.location.protocol === "http:") {
-    window.location.href = "https://" + window.location.hostname + window.location.pathname + window.location.search;
-  }
-</script>
+    if (window.location.protocol === "http:") {
+      window.location.href = "https://" + window.location.hostname + window.location.pathname + window.location.search;
+    }
+  </script>
 
-
-  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Fauzan – IT Infrastructure & Support</title>
   <meta name="description" content="Portfolio & CV Online – Muhammad Fauzan (IT Infrastructure & Support, Project Management, Networking, Helpdesk)." />
   <meta name="theme-color" content="#0f172a" />
   <meta property="og:title" content="Muhammad Fauzan – IT Infrastructure & Support" />
-  <meta property="og:description" content="10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed‑service Siloam (40+ unit, 80+ engineer)." />
+  <meta property="og:description" content="10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ojanriders.github.io/portofolio/" />
+  <meta property="og:url" content="https://portofolio.odinsan.co.id/" />
   <!-- Favicon default (huruf F). Upload avatar.jpg untuk mengganti logo navbar. -->
   <link id="dyn-favicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2310b981'/><text x='50' y='62' font-size='56' text-anchor='middle' fill='white' font-family='Arial,Helvetica,sans-serif'>F</text></svg>">
 
@@ -41,6 +39,7 @@
     .accent{background-image:linear-gradient(135deg,var(--accent-from),var(--accent-to));}
     .text-accent{background-image:linear-gradient(135deg,var(--accent-from),var(--accent-to));-webkit-background-clip:text;background-clip:text;color:transparent}
     .glass{background:rgba(30,41,59,.6);backdrop-filter:blur(10px)}
+
     /* Light theme overrides */
     [data-theme="light"] body{color:#111827!important;background:#f8fafc!important}
     [data-theme="light"] .glass{background:rgba(255,255,255,.85);border-color:#e2e8f0;color:#111827}
@@ -51,6 +50,11 @@
     [data-theme="light"] nav a{color:#334155}
     [data-theme="light"] nav a:hover{color:#0f172a}
     [data-theme="light"] .muted{color:#475569}
+
+    /* Bilingual visibility */
+    .t { display:none; }
+    [data-lang="id"] .t-id { display:initial; }
+    [data-lang="en"] .t-en { display:initial; }
   </style>
 </head>
 <body class="bg-base-900 text-slate-100 leading-relaxed selection:bg-emerald-500/30 selection:text-white transition-colors duration-300" id="bodyRoot">
@@ -59,19 +63,40 @@
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <!-- Upload avatar.jpg (sejajar index.html) untuk logo foto -->
-        <img id="logoImg" src="avatar.jpg" alt="Logo Fauzan" class="hidden h-8 w-8 rounded-full ring-2 ring-emerald-500/50 object-cover" onerror="this.classList.add('hidden')">
+        <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" class="hidden h-8 w-8 rounded-full ring-2 ring-emerald-500/50 object-cover" onerror="this.classList.add('hidden')">
         <a href="#top" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
       </div>
+
       <div class="hidden md:flex items-center gap-4 text-sm text-slate-300">
-        <a href="#about" class="hover:text-white">Tentang</a>
-        <a href="#experience" class="hover:text-white">Pengalaman</a>
-        <a href="#projects" class="hover:text-white">Proyek</a>
-        <a href="#cert" class="hover:text-white">Sertifikasi</a>
-        <a href="#testi" class="hover:text-white">Testimonial</a>
-        <a href="#contact" class="hover:text-white">Kontak</a>
-        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="hover:text-white" target="_blank" download>CV (PDF‑ID)</a>
-        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="hover:text-white" target="_blank" download>CV (PDF‑EN)</a>
-        <button id="themeToggle" class="ml-2 px-3 py-1 rounded-md border border-slate-700 text-slate-200 hover:bg-slate-800">☀️ / 🌙</button>
+        <a href="#about" class="hover:text-white t t-id">Tentang</a>
+        <a href="#about" class="hover:text-white t t-en">About</a>
+
+        <a href="#experience" class="hover:text-white t t-id">Pengalaman</a>
+        <a href="#experience" class="hover:text-white t t-en">Experience</a>
+
+        <a href="#projects" class="hover:text-white t t-id">Proyek</a>
+        <a href="#projects" class="hover:text-white t t-en">Projects</a>
+
+        <a href="#cert" class="hover:text-white t t-id">Sertifikasi</a>
+        <a href="#cert" class="hover:text-white t t-en">Certifications</a>
+
+        <a href="#testi" class="hover:text-white t t-id">Testimonial</a>
+        <a href="#testi" class="hover:text-white t t-en">Testimonials</a>
+
+        <a href="#contact" class="hover:text-white t t-id">Kontak</a>
+        <a href="#contact" class="hover:text-white t t-en">Contact</a>
+
+        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="hover:text-white t t-id" target="_blank" download>CV (PDF-ID)</a>
+        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="hover:text-white t t-en" target="_blank" download>CV (PDF-EN)</a>
+
+        <!-- Switchers -->
+        <div class="flex items-center gap-2 ml-2">
+          <button id="themeToggle" class="px-3 py-1 rounded-md border border-slate-700 text-slate-200 hover:bg-slate-800" aria-label="Switch theme">☀️ / 🌙</button>
+          <button id="langToggle" class="px-3 py-1 rounded-md border border-slate-700 text-slate-200 hover:bg-slate-800" aria-label="Switch language">
+            <span class="t t-id">ID / EN</span>
+            <span class="t t-en">EN / ID</span>
+          </button>
+        </div>
       </div>
     </nav>
   </header>
@@ -88,14 +113,26 @@
       <div class="grid gap-6 lg:grid-cols-3 items-stretch">
         <div class="lg:col-span-2">
           <h1 class="text-3xl md:text-5xl font-semibold leading-tight">Muhammad Fauzan</h1>
-          <p class="mt-2 text-lg md:text-xl text-slate-300 muted">IT Infrastructure & Support · Project Management</p>
-          <p class="mt-4 text-slate-300/90 muted max-w-3xl">Halo, perkenalkan saya Muhammad Fauzan, atau biasa dipanggil Ojan.
-Saya memiliki pengalaman lebih dari 10 tahun di bidang IT Support dan Infrastruktur.</p>
+          <p class="mt-2 text-lg md:text-xl text-slate-300 muted t t-id">IT Infrastructure & Support · Project Management</p>
+          <p class="mt-2 text-lg md:text-xl text-slate-300 muted t t-en">IT Infrastructure & Support · Project Management</p>
+
+          <p class="mt-4 text-slate-300/90 muted max-w-3xl t t-id">
+            Halo, perkenalkan saya <strong>Muhammad Fauzan</strong>, atau biasa dipanggil <strong>Ojan</strong>.<br>
+            Saya memiliki pengalaman lebih dari <strong>10 tahun</strong> di bidang <strong>IT Support dan Infrastruktur</strong>.
+          </p>
+          <p class="mt-4 text-slate-300/90 muted max-w-3xl t t-en">
+            Hi, I’m <strong>Muhammad Fauzan</strong> (you can call me <strong>Ojan</strong>).<br>
+            I have over <strong>10 years</strong> of experience in <strong>IT Support and Infrastructure</strong>.
+          </p>
+
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download>Download CV (PDF‑ID)</a>
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download>Download CV (PDF‑EN)</a>
-            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800">Chat via WhatsApp</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id" target="_blank" download>Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en" target="_blank" download>Download CV (PDF-EN)</a>
+
+            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-id">Chat via WhatsApp</a>
+            <a href="https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-en">Chat via WhatsApp</a>
           </div>
+
           <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300/90">
             <span>📍 Greater Jakarta, Indonesia</span>
             <a href="mailto:ojanriders@gmail.com" class="hover:text-white">✉️ Email</a>
@@ -103,19 +140,37 @@ Saya memiliki pengalaman lebih dari 10 tahun di bidang IT Support dan Infrastruk
             <a href="https://www.linkedin.com/in/muhammad-fauzan-68924b265" class="hover:text-white">in/LinkedIn</a>
           </div>
         </div>
+
         <aside class="lg:col-span-1">
           <div class="rounded-2xl glass border border-slate-700 p-5 h-full">
-            <h3 class="text-white text-base font-semibold mb-3">Ringkas Keahlian</h3>
-        <ul class="grid grid-cols-2 gap-2 text-xs">
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">Ticketing</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">Asset & Inventory Control</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">System Monitoring</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">Network Infrastructure</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">IT Procurement & Asset Tagging</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">Documentation & SOP Standardization</li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">Network Penetration Testing </li>
-  <li class="bg-slate-700/70 px-3 py-1 rounded-full">SLA Management & Escalation Flow</li>
-</ul>
+            <h3 class="text-white text-base font-semibold mb-3 t t-id">Ringkas Keahlian</h3>
+            <h3 class="text-white text-base font-semibold mb-3 t t-en">Key Skills</h3>
+
+            <ul class="grid grid-cols-2 gap-2 text-xs">
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">Ticketing</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">Ticketing</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">Asset & Inventory Control</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">Asset & Inventory Control</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">System Monitoring</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">System Monitoring</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">Network Infrastructure</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">Network Infrastructure</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">IT Procurement & Asset Tagging</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">IT Procurement & Asset Tagging</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">Documentation & SOP Standardization</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">Documentation & SOP Standardization</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">Network Penetration Testing</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">Network Penetration Testing</li>
+
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-id">SLA Management & Escalation Flow</li>
+              <li class="bg-slate-700/70 px-3 py-1 rounded-full t t-en">SLA Management & Escalation Flow</li>
+            </ul>
           </div>
         </aside>
       </div>
@@ -125,24 +180,44 @@ Saya memiliki pengalaman lebih dari 10 tahun di bidang IT Support dan Infrastruk
     <section id="about" class="py-16 md:py-20">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span> Tentang Saya
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Tentang Saya</span>
+          <span class="t t-en">About Me</span>
         </h2>
+
         <div class="mt-5 grid gap-6 lg:grid-cols-3">
-          <p class="lg:col-span-2 text-slate-200/90 leading-relaxed">Saya adalah lulusan Universitas Bina Nusantara, jurusan Sistem Informasi, lulus pada tahun 2015.
-Setelah itu, saya memulai perjalanan karier di dunia IT Support dan hingga kini telah menekuni bidang ini lebih dari 10 tahun.
-Saya menikmati peran sebagai IT Support karena setiap hari saya dapat berinteraksi dengan banyak orang dari berbagai divisi — bukan hanya membantu menyelesaikan kendala teknis, tetapi juga membangun hubungan kerja yang baik dengan seluruh tim.
+          <p class="lg:col-span-2 text-slate-200/90 leading-relaxed t t-id">
+            Saya adalah lulusan <strong>Universitas Bina Nusantara</strong>, jurusan <strong>Sistem Informasi</strong>, lulus pada tahun <strong>2015</strong>.<br>
+            Setelah itu, saya memulai karier di dunia <strong>IT Support</strong> dan hingga kini telah menekuni bidang ini lebih dari <strong>10 tahun</strong>.<br><br>
+            Saya menikmati peran sebagai IT Support karena setiap hari saya dapat berinteraksi dengan banyak orang dari berbagai divisi — bukan hanya membantu menyelesaikan kendala teknis, tetapi juga membangun hubungan kerja yang baik dengan seluruh tim.<br><br>
+            Selain menangani troubleshooting harian, saya juga terus mengembangkan kemampuan saya di bidang <strong>networking</strong> dan <strong>cyber security</strong>. Bagi saya, pekerjaan IT Support tidak hanya sebatas memperbaiki masalah, tetapi juga mencakup <strong>pendokumentasian yang baik</strong>, <strong>pengelolaan aset</strong>, <strong>monitoring sistem</strong>, dan memastikan <strong>keamanan infrastruktur</strong> perusahaan tetap terjaga.<br><br>
+            Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, dan dokumentasi yang rapi adalah kunci untuk menciptakan lingkungan IT yang stabil dan efisien.
+          </p>
 
-Selain menangani troubleshooting harian, saya juga terus mengembangkan kemampuan saya di bidang networking dan cyber security.
-Bagi saya, pekerjaan IT Support tidak hanya sebatas memperbaiki masalah, tetapi juga mencakup pendokumentasian yang baik, pengelolaan aset, monitoring sistem, dan memastikan keamanan infrastruktur perusahaan tetap terjaga.
+          <p class="lg:col-span-2 text-slate-200/90 leading-relaxed t t-en">
+            I graduated from <strong>Bina Nusantara University</strong>, majoring in <strong>Information Systems</strong> (class of <strong>2015</strong>).<br>
+            Since then, I’ve built a career in <strong>IT Support</strong> and have spent over <strong>10 years</strong> in this field.<br><br>
+            I enjoy working in IT Support because I get to collaborate with people across different departments — not only fixing technical issues, but also building strong working relationships.<br><br>
+            Beyond daily troubleshooting, I continuously develop my skills in <strong>networking</strong> and <strong>cyber security</strong>. For me, IT Support also means <strong>good documentation</strong>, <strong>asset management</strong>, <strong>system monitoring</strong>, and ensuring <strong>infrastructure security</strong> remains robust.<br><br>
+            I believe a combination of technical capability, clear communication, and disciplined documentation is essential for a stable and efficient IT environment.
+          </p>
 
-Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, dan dokumentasi yang rapi adalah kunci untuk menciptakan lingkungan IT yang stabil dan efisien.</p>
           <div class="rounded-2xl glass border border-slate-700 p-5 text-sm">
-            <h3 class="font-semibold mb-2">Fokus Saat Ini</h3>
+            <h3 class="font-semibold mb-2 t t-id">Fokus Saat Ini</h3>
+            <h3 class="font-semibold mb-2 t t-en">Current Focus</h3>
+
             <ul class="space-y-2 text-slate-300">
-           <li>• Mencari peluang kerja yang sejalan dengan pengalaman & visi saya</li>
-           <li>• Membangun koneksi profesional di LinkedIn & komunitas IT</li>
-          <li>• Mengikuti pelatihan & sertifikasi profesional (Fortinet, ITIL, Cyber Academy)</li>
-         <li>•Mengikuti pelatihan dan course untuk mengejar perkembangan teknologi terkini.</li>
+              <li class="t t-id">• Mencari peluang kerja yang sejalan dengan pengalaman & visi saya</li>
+              <li class="t t-en">• Exploring roles aligned with my experience & career vision</li>
+
+              <li class="t t-id">• Membangun koneksi profesional di LinkedIn & komunitas IT</li>
+              <li class="t t-en">• Building professional connections on LinkedIn & IT communities</li>
+
+              <li class="t t-id">• Mengikuti pelatihan & sertifikasi profesional (Fortinet, ITIL, Cyber Academy)</li>
+              <li class="t t-en">• Attending professional trainings & certifications (Fortinet, ITIL, Cyber Academy)</li>
+
+              <li class="t t-id">• Mengikuti course & pelatihan untuk mengejar perkembangan teknologi baru</li>
+              <li class="t t-en">• Taking courses to keep up with new technologies</li>
             </ul>
           </div>
         </div>
@@ -152,48 +227,90 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
     <!-- EXPERIENCE -->
     <section id="experience" class="py-16 md:py-20 border-t border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3"><span class="h-5 w-5 rounded-full accent inline-block"></span> Pengalaman Kerja</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Pengalaman Kerja</span>
+          <span class="t t-en">Work Experience</span>
+        </h2>
+
         <div class="mt-8 grid md:grid-cols-2 gap-6">
           <article class="rounded-2xl glass border border-slate-700 p-6 shadow-soft">
-            <h3 class="text-white text-lg font-semibold">Project Manager – IT Support & Helpdesk</h3>
-            <p class="text-slate-300/80 text-sm">Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025</p>
+            <h3 class="text-white text-lg font-semibold t t-id">Project Manager – IT Support & Helpdesk</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Project Manager – IT Support & Helpdesk</h3>
+
+            <p class="text-slate-300/80 text-sm t t-id">Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025</p>
+            <p class="text-slate-300/80 text-sm t t-en">Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025</p>
+
             <ul class="list-disc list-inside text-slate-200/90 text-sm leading-relaxed mt-3">
-              <li>Transisi managed‑service untuk 40+ RS, 78–80 IT Support & 7 Helpdesk.</li>
-              <li>Aturan SLA & Mistake Flags; dashboard tiket mingguan</li>
-              <li>Koordinasi shifting nasional, backup roster, dan eskalasi HO ICT/IT Ops.</li>
+              <li class="t t-id">Transisi managed-service untuk 40+ RS, 78–80 IT Support & 7 Helpdesk.</li>
+              <li class="t t-en">Managed-service transition for 40+ hospitals, 78–80 IT Support & 7 Helpdesk.</li>
+
+              <li class="t t-id">Aturan SLA & Mistake Flags; dashboard tiket mingguan.</li>
+              <li class="t t-en">SLA rules & mistake flags; weekly ticket dashboards.</li>
+
+              <li class="t t-id">Koordinasi shifting nasional, backup roster, dan eskalasi HO ICT/IT Ops.</li>
+              <li class="t t-en">Nationwide shift coordination, backup rosters, and HO ICT/IT Ops escalation.</li>
             </ul>
+
             <div class="flex flex-wrap gap-2 pt-3 text-xs">
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">ManageEngine</span>
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">GPO</span>
-              <span class="bg-slate-700/80 px-3 py-1 rounded-full">Leadership</span>
-              <span class="bg-slate-700/80 px-3 py-1 rounded-full">Reporting</span>
-              <span class="bg-slate-700/80 px-3 py-1 rounded-full">Manajemen Acces</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-id">Leadership</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-en">Leadership</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-id">Reporting</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-en">Reporting</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-id">Manajemen Akses</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-en">Access Management</span>
             </div>
           </article>
+
           <article class="rounded-2xl glass border border-slate-700 p-6 shadow-soft">
-            <h3 class="text-white text-lg font-semibold">IT Infrastructure & Support Lead</h3>
-            <p class="text-slate-300/80 text-sm">PT Enigma Cipta Humanika · 03/2025 – 10/2025</p>
+            <h3 class="text-white text-lg font-semibold t t-id">IT Infrastructure & Support Lead</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">IT Infrastructure & Support Lead</h3>
+
+            <p class="text-slate-300/80 text-sm t t-id">PT Enigma Cipta Humanika · 03/2025 – 10/2025</p>
+            <p class="text-slate-300/80 text-sm t t-en">PT Enigma Cipta Humanika · 03/2025 – 10/2025</p>
+
             <ul class="list-disc list-inside text-slate-200/90 text-sm leading-relaxed mt-3">
-              <li>Administrasi LAN/WAN, WAP, dan VPN; troubleshooting HW/SW.</li>
-              <li>Kelola aset & inventory multi‑cabang; pengadaan, tagging, maintenance.</li>
-              <li>Monitoring uptime (Zabbix/PRTG) & peningkatan produktivitas.</li>
+              <li class="t t-id">Administrasi LAN/WAN, WAP, dan VPN; troubleshooting HW/SW.</li>
+              <li class="t t-en">LAN/WAN, WAP, and VPN administration; HW/SW troubleshooting.</li>
+
+              <li class="t t-id">Kelola aset & inventory multi-cabang; pengadaan, tagging, maintenance.</li>
+              <li class="t t-en">Multi-branch asset & inventory management; procurement, tagging, maintenance.</li>
+
+              <li class="t t-id">Monitoring uptime (Zabbix/PRTG) & peningkatan produktivitas.</li>
+              <li class="t t-en">Uptime monitoring (Zabbix/PRTG) & productivity improvements.</li>
             </ul>
+
             <div class="flex flex-wrap gap-2 pt-3 text-xs">
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">Windows/Linux</span>
-              <span class="bg-slate-700/80 px-3 py-1 rounded-full">Security</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-id">Security</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-en">Security</span>
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">Networking</span>
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">VPN</span>
-              <span class="bg-slate-700/80 px-3 py-1 rounded-full">Asset Management</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-id">Asset Management</span>
+              <span class="bg-slate-700/80 px-3 py-1 rounded-full t t-en">Asset Management</span>
             </div>
           </article>
+
           <article class="rounded-2xl glass border border-slate-700 p-6 shadow-soft md:col-span-2">
-            <h3 class="text-white text-lg font-semibold">IT Support</h3>
-            <p class="text-slate-300/80 text-sm">PT Mitra Bersama Jaya · 08/2015 – 02/2022</p>
+            <h3 class="text-white text-lg font-semibold t t-id">IT Support</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">IT Support</h3>
+
+            <p class="text-slate-300/80 text-sm t t-id">PT Mitra Bersama Jaya · 08/2015 – 02/2022</p>
+            <p class="text-slate-300/80 text-sm t t-en">PT Mitra Bersama Jaya · 08/2015 – 02/2022</p>
+
             <ul class="list-disc list-inside text-slate-200/90 text-sm leading-relaxed mt-3">
-              <li>Support on‑site: troubleshooting perangkat, jaringan, server dasar.</li>
-              <li>MDM berbasis Avast Console untuk kebijakan endpoint.</li>
-              <li>Dukungan event & operasional harian lintas departemen.</li>
+              <li class="t t-id">Support on-site: troubleshooting perangkat, jaringan, server dasar.</li>
+              <li class="t t-en">On-site support: hardware, network, and basic server troubleshooting.</li>
+
+              <li class="t t-id">MDM berbasis Avast Console untuk kebijakan endpoint.</li>
+              <li class="t t-en">Avast Console-based MDM for endpoint policy.</li>
+
+              <li class="t t-id">Dukungan event & operasional harian lintas departemen.</li>
+              <li class="t t-en">Event support & daily operations across departments.</li>
             </ul>
+
             <div class="flex flex-wrap gap-2 pt-3 text-xs">
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">Avast Console (MDM)</span>
               <span class="bg-slate-700/80 px-3 py-1 rounded-full">Windows Server</span>
@@ -207,16 +324,68 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
     <!-- PROJECTS -->
     <section id="projects" class="py-16 md:py-20 border-t border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3"><span class="h-5 w-5 rounded-full accent inline-block"></span> Proyek Terpilih</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Proyek Terpilih</span>
+          <span class="t t-en">Selected Projects</span>
+        </h2>
+
         <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">IT Managed Service – Siloam (All Units)</h3><p class="text-slate-200/90 text-sm mt-2">Desain & implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA & Mistake Flags hingga monitoring mingguan.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Helpdesk SLA Improvement (98% SLA)</h3><p class="text-slate-200/90 text-sm mt-2">Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident & service request, dilengkapi monitoring mistake dan sistem reporting otomatis.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Network Infra – PT GK Hebat</h3><p class="text-slate-200/90 text-sm mt-2">Instalasi Radio wireless & firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Sentralisasi & Implementasi Infrastruktur</h3><p class="text-slate-200/90 text-sm mt-2">Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Asset Management System</h3><p class="text-slate-200/90 text-sm mt-2">Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Security Awareness Program</h3><p class="text-slate-200/90 text-sm mt-2">Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint & Wi‑Fi safety.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Trainer – Enigmacamp (Danamon University)</h3><p class="text-slate-200/90 text-sm mt-2">Pelatihan OS Linux & Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD.</p></article>
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col"><h3 class="text-white text-lg font-semibold">Hackathon TechConnect – Enigma x Sinar Mas</h3><p class="text-slate-200/90 text-sm mt-2">IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar.</p></article>
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">IT Managed Service – Siloam (All Units)</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">IT Managed Service – Siloam (All Units)</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Desain & implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA & Mistake Flags hingga monitoring mingguan.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Designed & implemented centralized IT Support: SOPs, access policy, and ticketing governance for 40+ units (78–80 engineers). Enforced SLAs & mistake flags with weekly monitoring.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Helpdesk SLA Improvement (98% SLA)</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Helpdesk SLA Improvement (98% SLA)</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident & service request, dilengkapi monitoring mistake dan sistem reporting otomatis.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Improved SLA and standardized ticketing SOPs to centralize incident & service requests, with mistake monitoring and automated reporting.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Network Infra – PT GK Hebat</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Network Infra – PT GK Hebat</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Instalasi radio wireless & firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Deployed wireless radio & firewall for 10 sites (26,000+ ha) in Kalimantan; centralized topology.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Sentralisasi & Implementasi Infrastruktur</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Centralized Infrastructure Implementation</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Standardized IT systems, MikroTik VPN tunneling, and ERP connectivity for 27 branches; topology docs, QoS, and asset tagging.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Asset Management System</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Asset Management System</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Built asset inventory system (Snipit): barcode labeling, digital signature, and device lifecycle tracking.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Security Awareness Program</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Security Awareness Program</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Monthly awareness: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Trainer – Enigmacamp (Danamon University)</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Trainer – Enigmacamp (Danamon University)</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">Pelatihan OS Linux & Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">Linux & Windows Server training (3 days): CLI, basic networking, shell scripting, file sharing, and AD concepts.</p>
+          </article>
+
+          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col">
+            <h3 class="text-white text-lg font-semibold t t-id">Hackathon TechConnect – Enigma x Sinar Mas</h3>
+            <h3 class="text-white text-lg font-semibold t t-en">Hackathon TechConnect – Enigma x Sinar Mas</h3>
+            <p class="text-slate-200/90 text-sm mt-2 t t-id">IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar.</p>
+            <p class="text-slate-200/90 text-sm mt-2 t t-en">IT ops event: participant laptop setup, network readiness, and technical coordination to ensure smooth operations.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -224,32 +393,93 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
     <!-- CERTIFICATIONS -->
     <section id="cert" class="py-16 md:py-20 border-t border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3"><span class="h-5 w-5 rounded-full accent inline-block"></span> Sertifikasi & Pembelajaran</h2>
-        <p class="text-xs text-slate-400 mt-2"><!-- TIP: Ganti href="#" di bawah menjadi URL sertifikat (Credly, Google, Cyber Academy, dll). Contoh: href="https://credly.com/badges/xxxxx" --></p>
+        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Sertifikasi & Pembelajaran</span>
+          <span class="t t-en">Certifications & Learning</span>
+        </h2>
+
+        <p class="text-xs text-slate-400 mt-2"><!-- TIP: Link sudah diisi. Tambah / ganti sesuai kebutuhan. --></p>
+
         <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="https://www.coursera.org/account/accomplishments/professional-cert/IND2C8ZPXWEZ" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-1 hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Google IT Support</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span></a>
-          <a href="https://www.cyberacademy.id/certificate/WPTR0112244245" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Web Penetration Testing</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span></a>
-          <a href="https://www.cyberacademy.id/certificate/NTPT0107242054" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Network Penetration Testing</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span></a>
-          <a href="https://www.coursera.org/account/accomplishments/specialization/JM58T9D5P9B1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Google Project Management Specialization</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span></a>
-          <a href="https://www.cyberacademy.id/certificate/DFA0103250752" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Digital Forensic Analyst</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span></a>
-          <a href="https://www.cyberacademy.id/certificate/SOCA0110243535" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Security Operation Center (SOC) Analyst</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span></a>
-          <a href="#" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">MikroTik Certified Network Associate (ID 2301NA285)</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">MikroTik</span></a>
-          <a href="https://www.credly.com/badges/799e0823-6faf-4ea5-a366-a845945d1562/linked_in_profile" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40"><span class="text-slate-200 text-sm">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span><span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Fortinet</span></a>
+          <a href="https://www.coursera.org/account/accomplishments/professional-cert/IND2C8ZPXWEZ" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-1 hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Google IT Support</span>
+            <span class="text-slate-200 text-sm t t-en">Google IT Support</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
+          </a>
+
+          <a href="https://www.cyberacademy.id/certificate/WPTR0112244245" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Web Penetration Testing</span>
+            <span class="text-slate-200 text-sm t t-en">Web Penetration Testing</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
+          </a>
+
+          <a href="https://www.cyberacademy.id/certificate/NTPT0107242054" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Network Penetration Testing</span>
+            <span class="text-slate-200 text-sm t t-en">Network Penetration Testing</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/specialization/JM58T9D5P9B1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Google Project Management Specialization</span>
+            <span class="text-slate-200 text-sm t t-en">Google Project Management Specialization</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
+          </a>
+
+          <a href="https://www.cyberacademy.id/certificate/DFA0103250752" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Digital Forensic Analyst</span>
+            <span class="text-slate-200 text-sm t t-en">Digital Forensic Analyst</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
+          </a>
+
+          <a href="https://www.cyberacademy.id/certificate/SOCA0110243535" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Security Operation Center (SOC) Analyst</span>
+            <span class="text-slate-200 text-sm t t-en">Security Operation Center (SOC) Analyst</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
+          </a>
+
+          <a href="#" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">MikroTik Certified Network Associate (ID 2301NA285)</span>
+            <span class="text-slate-200 text-sm t t-en">MikroTik Certified Network Associate (ID 2301NA285)</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">MikroTik</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/799e0823-6faf-4ea5-a366-a845945d1562/linked_in_profile" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40">
+            <span class="text-slate-200 text-sm t t-id">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span>
+            <span class="text-slate-200 text-sm t t-en">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span>
+            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Fortinet</span>
+          </a>
         </div>
-        <p class="text-xs text-slate-400 mt-3"><!-- CONTOH: <a href="https://credly.com/badge/xxxxx" target="_blank">Link Credly</a> -->
-        </p>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section id="testi" class="py-16 md:py-20 border-t border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3"><span class="h-5 w-5 rounded-full accent inline-block"></span> Testimonial</h2>
-        <p class="text-xs text-slate-400 mt-2"><!-- TIP: Edit nama & peran. Tambah kartu baru sesuai kebutuhan. --></p>
+        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Testimonial</span>
+          <span class="t t-en">Testimonials</span>
+        </h2>
+
         <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft"><blockquote class="text-slate-200/90 text-sm">“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”</blockquote><figcaption class="mt-4 text-xs text-slate-400">— Randi, Recruitment</figcaption></figure>
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft"><blockquote class="text-slate-200/90 text-sm">“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”</blockquote><figcaption class="mt-4 text-xs text-slate-400">— Pujo, IT Ops</figcaption></figure>
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft"><blockquote class="text-slate-200/90 text-sm">“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”</blockquote><figcaption class="mt-4 text-xs text-slate-400">— Karis, GA</figcaption></figure>
+          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft">
+            <blockquote class="text-slate-200/90 text-sm t t-id">“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”</blockquote>
+            <blockquote class="text-slate-200/90 text-sm t t-en">“Fauzan responds quickly and keeps documentation neat. Helpdesk escalations became far more organized.”</blockquote>
+            <figcaption class="mt-4 text-xs text-slate-400">— Randi, Recruitment</figcaption>
+          </figure>
+
+          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft">
+            <blockquote class="text-slate-200/90 text-sm t t-id">“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”</blockquote>
+            <blockquote class="text-slate-200/90 text-sm t t-en">“Nationwide shift coordination was smooth. Communicative and reliable during busy events.”</blockquote>
+            <figcaption class="mt-4 text-xs text-slate-400">— Pujo, IT Ops</figcaption>
+          </figure>
+
+          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft">
+            <blockquote class="text-slate-200/90 text-sm t t-id">“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”</blockquote>
+            <blockquote class="text-slate-200/90 text-sm t t-en">“Proactive in providing solutions; from networking to MDM, everything was handled.”</blockquote>
+            <figcaption class="mt-4 text-xs text-slate-400">— Karis, GA</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -257,19 +487,27 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
     <!-- CONTACT -->
     <section id="contact" class="py-16 md:py-20 border-t border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3"><span class="h-5 w-5 rounded-full accent inline-block"></span> Kontak</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span class="h-5 w-5 rounded-full accent inline-block"></span>
+          <span class="t t-id">Kontak</span>
+          <span class="t t-en">Contact</span>
+        </h2>
+
         <div class="mt-8 rounded-2xl glass border border-slate-700 p-6 grid lg:grid-cols-2 gap-6 items-center">
           <div class="space-y-3 text-slate-200/90 text-sm">
-            <p>Saya terbuka untuk berdiskusi mengenai kesempatan kerja atau kolaborasi di bidang IT Infrastructure dan Support.</p>
+            <p class="t t-id">Silakan hubungi saya untuk informasi lebih lanjut atau peluang kerja yang sesuai dengan pengalaman saya.</p>
+            <p class="t t-en">Feel free to reach out for more information or opportunities aligned with my experience.</p>
+
             <div class="flex flex-wrap gap-4 pt-2">
               <a href="mailto:ojanriders@gmail.com" class="hover:text-white">✉️ Email</a>
               <a href="https://wa.me/6281296070148" class="hover:text-white">📱 WhatsApp</a>
               <a href="https://www.linkedin.com/in/muhammad-fauzan-68924b265" class="hover:text-white">in/LinkedIn</a>
             </div>
           </div>
+
           <div class="lg:justify-self-end flex flex-wrap gap-3">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download>Download CV (PDF‑ID)</a>
-             <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download>Download CV (PDF‑EN)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id" target="_blank" download>Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en" target="_blank" download>Download CV (PDF-EN)</a>
           </div>
         </div>
       </div>
@@ -279,7 +517,10 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
   <footer class="py-10 border-t border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
       <p>© <span id="year"></span> Muhammad Fauzan. All rights reserved.</p>
-      <a href="#top" class="hover:text-slate-200">Kembali ke atas</a>
+      <a href="#top" class="hover:text-slate-200">
+        <span class="t t-id">Kembali ke atas</span>
+        <span class="t t-en">Back to top</span>
+      </a>
     </div>
   </footer>
 
@@ -288,19 +529,32 @@ Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, d
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Tema: light/dark dengan localStorage
-    const root=document.documentElement;
-    const btn=document.getElementById('themeToggle');
-    const saved=localStorage.getItem('theme')||'dark';
-    if(saved==='light'){root.setAttribute('data-theme','light');}
-    btn?.addEventListener('click',()=>{
-      const current=root.getAttribute('data-theme')==='light'?'light':'dark';
-      const next=current==='light'?'dark':'light';
-      root.setAttribute('data-theme',next);
-      localStorage.setItem('theme',next);
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') root.setAttribute('data-theme','light');
+    themeBtn?.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Bahasa: ID/EN dengan localStorage (default ID)
+    const langBtn = document.getElementById('langToggle');
+    const savedLang = localStorage.getItem('lang') || 'id';
+    root.setAttribute('data-lang', savedLang);
+    langBtn?.addEventListener('click', () => {
+      const current = root.getAttribute('data-lang') === 'en' ? 'en' : 'id';
+      const next = current === 'en' ? 'id' : 'en';
+      root.setAttribute('data-lang', next);
+      localStorage.setItem('lang', next);
     });
 
     // Tampilkan logo bila avatar.jpg tersedia
-    fetch('avatar.jpg',{method:'HEAD'}).then(r=>{if(r.ok){document.getElementById('logoImg').classList.remove('hidden')}}).catch(()=>{});
+    fetch('avatar.jpg', { method:'HEAD' })
+      .then(r => { if (r.ok) document.getElementById('logoImg').classList.remove('hidden'); })
+      .catch(() => {});
   </script>
 </body>
 </html>
