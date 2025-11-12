@@ -1,0 +1,49 @@
+name: Optimize images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - 'scripts/optimize-images.mjs'
+      - '.github/workflows/image-optimization.yml'
+  pull_request:
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - 'scripts/optimize-images.mjs'
+      - '.github/workflows/image-optimization.yml'
+  workflow_dispatch:
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Optimize images
+        run: npm run optimize:images
+
+      - name: Ensure repository is clean
+        run: |
+          if ! git diff --quiet; then
+            echo "Image optimization script made changes. Please run 'npm run optimize:images' locally and commit the results." >&2
+            git --no-pager diff
+            exit 1
+          fi
