@@ -26,6 +26,8 @@
   <meta name="twitter:title" content="Muhammad Fauzan – IT Infrastructure & Support" />
   <meta name="twitter:description" content="10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)." />
   <meta name="twitter:image" content="https://og.portofolio.odinsan.co.id/?name=Muhammad%20Fauzan&role=IT%20Infrastructure%20%26%20Support&from=10b981&to=14b8a6" />
+  <!-- Plausible analytics (cookieless) -->
+  <script defer data-domain="portofolio.odinsan.co.id" src="https://plausible.io/js/script.js"></script>
   <!-- Favicon default (huruf F). Upload avatar.jpg untuk mengganti logo navbar. -->
   <link id="dyn-favicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2310b981'/><text x='50' y='62' font-size='56' text-anchor='middle' fill='white' font-family='Arial,Helvetica,sans-serif'>F</text></svg>">
 
@@ -255,11 +257,11 @@
           </p>
 
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-ID)</a>
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-EN)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download data-analytics-event="Download CV" data-analytics-label="hero-id">Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download data-analytics-event="Download CV" data-analytics-label="hero-en">Download CV (PDF-EN)</a>
 
-            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-id interactive-cta" rel="noopener">Chat via WhatsApp</a>
-            <a href="https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-en interactive-cta" rel="noopener">Chat via WhatsApp</a>
+            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-id interactive-cta" rel="noopener" data-analytics-event="Hire Me" data-analytics-label="hero-id">Rekrut Saya via WhatsApp</a>
+            <a href="https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 t t-en interactive-cta" rel="noopener" data-analytics-event="Hire Me" data-analytics-label="hero-en">Hire Me via WhatsApp</a>
           </div>
 
           <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300/90">
@@ -638,8 +640,8 @@
           </div>
 
           <div class="lg:justify-self-end flex flex-wrap gap-3 reveal delay-1">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-ID)</a>
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download>Download CV (PDF-EN)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-id interactive-cta" target="_blank" rel="noopener" download data-analytics-event="Download CV" data-analytics-label="contact-id">Download CV (PDF-ID)</a>
+            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90 t t-en interactive-cta" target="_blank" rel="noopener" download data-analytics-event="Download CV" data-analytics-label="contact-en">Download CV (PDF-EN)</a>
           </div>
         </div>
       </div>
@@ -867,6 +869,26 @@
 
     initRevealAnimations();
     motionQuery.addEventListener?.('change', initRevealAnimations);
+
+    // Analytics event bindings
+    const trackEvent = (name, label) => {
+      if (typeof window.plausible !== 'function') return;
+      if (label) {
+        window.plausible(name, { props: { label } });
+      } else {
+        window.plausible(name);
+      }
+    };
+
+    document.querySelectorAll('[data-analytics-event]')
+      .forEach(el => {
+        el.addEventListener('click', () => {
+          const name = el.getAttribute('data-analytics-event');
+          if (!name) return;
+          const label = el.getAttribute('data-analytics-label') || undefined;
+          trackEvent(name, label);
+        });
+      });
   </script>
 </body>
 </html>
