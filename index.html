@@ -18,6 +18,16 @@
   <meta property="og:description" content="10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)." data-i18n="meta.ogDescription" data-i18n-attr="content" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://portofolio.odinsan.co.id/" />
+  <meta property="og:image" content="https://og.portofolio.odinsan.co.id/?name=Muhammad%20Fauzan&role=IT%20Infrastructure%20%26%20Support&from=10b981&to=14b8a6" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muhammad Fauzan – IT Infrastructure & Support" />
+  <meta name="twitter:description" content="10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)." />
+  <meta name="twitter:image" content="https://og.portofolio.odinsan.co.id/?name=Muhammad%20Fauzan&role=IT%20Infrastructure%20%26%20Support&from=10b981&to=14b8a6" />
+  <!-- Plausible analytics (cookieless) -->
+  <script defer data-domain="portofolio.odinsan.co.id" src="https://plausible.io/js/script.js"></script>
   <!-- Favicon default (huruf F). Upload avatar.jpg untuk mengganti logo navbar. -->
   <link id="dyn-favicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2310b981'/><text x='50' y='62' font-size='56' text-anchor='middle' fill='white' font-family='Arial,Helvetica,sans-serif'>F</text></svg>">
 
@@ -48,6 +58,16 @@
     .delay-3{transition-delay:.45s;}
     .delay-4{transition-delay:.6s;}
 
+    .skip-link{position:absolute;top:-120px;left:50%;transform:translateX(-50%);background:#0f172a;color:#f8fafc;padding:.75rem 1.25rem;border-radius:.75rem;font-weight:600;box-shadow:0 12px 30px -18px rgba(15,23,42,.9);transition:top .3s ease,opacity .3s ease;opacity:0;z-index:50;}
+    .skip-link:focus{top:1rem;opacity:1;outline:2px solid var(--accent-from);outline-offset:3px;}
+
+    .logo-slot{position:relative;display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;border:2px solid rgba(16,185,129,.35);background:rgba(15,23,42,.85);overflow:hidden;color:#f8fafc;font-weight:600;letter-spacing:.02em;}
+    .logo-fallback{transition:opacity .3s ease;}
+    .logo-slot.has-image .logo-fallback{opacity:0;}
+    .logo-slot.logo-missing{border-color:rgba(148,163,184,.35);}
+    .logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
+    .logo-slot.has-image .logo-img{opacity:1;}
+
     /* Light theme overrides */
     [data-theme="light"] body{color:#111827!important;background:#f8fafc!important}
     [data-theme="light"] .glass{background:rgba(255,255,255,.85);border-color:#e2e8f0;color:#111827}
@@ -61,32 +81,120 @@
 
     @keyframes accentShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
     @keyframes floatGlow{0%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(0,-18px,0) scale(1.05);}100%{transform:translate3d(0,10px,0) scale(.98);}}
+    @keyframes heroFloat{0%{transform:translate3d(0,0,0);}50%{transform:translate3d(0,-14px,0);}100%{transform:translate3d(0,6px,0);}}
+
+    @media (prefers-reduced-motion: no-preference){
+      .logo-slot{transition:transform .6s cubic-bezier(.22,1,.36,1),border-color .3s ease;}
+      .logo-slot:hover{transform:translateY(-2px);border-color:rgba(20,184,166,.55);}
+      .logo-img{transition:opacity .4s ease;}
+      .hero-card-floating{animation:heroFloat 18s ease-in-out infinite alternate;}
+      .interactive-cta{transition:transform .3s ease,box-shadow .3s ease;}
+      .interactive-cta:hover,
+      .interactive-cta:focus-visible{transform:translateY(-2px);box-shadow:0 18px 36px -20px rgba(20,184,166,.55);}
+    }
 
     @media (prefers-reduced-motion: reduce){
       .accent{animation:none;}
       .glow-orb{animation:none;}
       .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+      .interactive-cta{transition:none!important;}
+      .logo-slot{transition:none;}
     }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://portofolio.odinsan.co.id/#person",
+          "name": "Muhammad Fauzan",
+          "alternateName": "Ojan",
+          "jobTitle": "IT Infrastructure & Support Specialist",
+          "description": [
+            {
+              "@value": "Halo, perkenalkan saya Muhammad Fauzan (Ojan). Saya memiliki pengalaman lebih dari 10 tahun di bidang IT Support dan Infrastruktur.",
+              "@language": "id"
+            },
+            {
+              "@value": "Hi, I’m Muhammad Fauzan (Ojan). I have over 10 years of experience in IT Support and Infrastructure.",
+              "@language": "en"
+            }
+          ],
+          "url": "https://portofolio.odinsan.co.id/",
+          "image": "https://portofolio.odinsan.co.id/avatar.jpg",
+          "email": "mailto:ojanriders@gmail.com",
+          "telephone": "+62-812-9607-0148",
+          "sameAs": [
+            "https://www.linkedin.com/in/muhammad-fauzan-68924b265",
+            "https://wa.me/6281296070148"
+          ],
+          "knowsLanguage": [
+            {
+              "@type": "Language",
+              "name": "Bahasa Indonesia",
+              "alternateName": "id"
+            },
+            {
+              "@type": "Language",
+              "name": "English",
+              "alternateName": "en"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://portofolio.odinsan.co.id/#website",
+          "url": "https://portofolio.odinsan.co.id/",
+          "name": "Muhammad Fauzan – IT Infrastructure & Support",
+          "alternateName": "Fauzan.IT",
+          "description": [
+            {
+              "@value": "Portfolio & CV Online – Muhammad Fauzan (IT Infrastructure & Support, Project Management, Networking, Helpdesk).",
+              "@language": "id"
+            },
+            {
+              "@value": "10+ years of experience in IT Support & Infrastructure. Former Project Manager managing 40+ units with 80+ engineers.",
+              "@language": "en"
+            }
+          ],
+          "inLanguage": ["id", "en"],
+          "publisher": {
+            "@id": "https://portofolio.odinsan.co.id/#person"
+          },
+          "potentialAction": {
+            "@type": "ContactAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://wa.me/6281296070148?text={message}"
+            },
+            "result": {
+              "@type": "ContactPoint",
+              "telephone": "+62-812-9607-0148",
+              "contactType": "customer support"
+            }
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="bg-base-900 text-slate-100 leading-relaxed selection:bg-emerald-500/30 selection:text-white transition-colors duration-300" id="bodyRoot">
+  <a href="#mainContent" class="skip-link">Lewati ke konten utama</a>
   <!-- NAV -->
-  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-base-900/70 backdrop-blur" id="siteHeader">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-base-900/70 backdrop-blur" id="siteHeader" role="banner">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Navigasi utama">
       <div class="flex items-center gap-3">
         <!-- Upload avatar.jpg (sejajar index.html) untuk logo foto -->
-        <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" class="hidden h-8 w-8 rounded-full ring-2 ring-emerald-500/50 object-cover" onerror="this.classList.add('hidden')">
-        <a href="#top" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
+        <span class="logo-slot">
+          <span class="logo-fallback" aria-hidden="true">F</span>
+          <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" width="32" height="32" class="logo-img" loading="lazy">
+        </span>
+        <a href="#mainContent" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
       </div>
 
       <div class="hidden md:flex items-center gap-4 text-sm text-slate-300">
-        <a href="#about" class="hover:text-white" data-i18n="nav.about">Tentang</a>
-        <a href="#experience" class="hover:text-white" data-i18n="nav.experience">Pengalaman</a>
-        <a href="#projects" class="hover:text-white" data-i18n="nav.projects">Proyek</a>
-        <a href="#cert" class="hover:text-white" data-i18n="nav.certifications">Sertifikasi</a>
-        <a href="#testi" class="hover:text-white" data-i18n="nav.testimonials">Testimonial</a>
-        <a href="#contact" class="hover:text-white" data-i18n="nav.contact">Kontak</a>
-        <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="hover:text-white" target="_blank" download data-i18n="nav.cv">CV (PDF-ID)</a>
+
 
         <!-- Switchers -->
         <div class="flex items-center gap-2 ml-2">
@@ -97,7 +205,7 @@
     </nav>
   </header>
 
-  <main id="top" class="relative overflow-hidden">
+  <main id="mainContent" class="relative overflow-hidden" role="main">
     <!-- Glow background -->
     <div class="absolute inset-0 opacity-25 pointer-events-none">
       <div class="accent glow-orb absolute -top-24 -right-16 h-72 w-72 rounded-full blur-3xl"></div>
@@ -105,11 +213,10 @@
     </div>
 
     <!-- HERO -->
-    <section class="relative max-w-6xl mx-auto px-4 pt-12 md:pt-20 pb-10 reveal">
+    <section class="relative max-w-6xl mx-auto px-4 pt-12 md:pt-20 pb-10 reveal" aria-labelledby="hero-title">
       <div class="grid gap-6 lg:grid-cols-3 items-stretch">
         <div class="lg:col-span-2 reveal">
-          <h1 class="text-3xl md:text-5xl font-semibold leading-tight">Muhammad Fauzan</h1>
-          <p class="mt-2 text-lg md:text-xl text-slate-300 muted" data-i18n="hero.subtitle">IT Infrastructure &amp; Support · Project Management</p>
+
 
           <p class="mt-4 text-slate-300/90 muted max-w-3xl" data-i18n="hero.intro" data-i18n-type="html">
             Halo, perkenalkan saya <strong>Muhammad Fauzan</strong>, atau biasa dipanggil <strong>Ojan</strong>.<br>
@@ -117,8 +224,7 @@
           </p>
 
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download data-i18n="cta.downloadCv">Download CV (PDF-ID)</a>
-            <a href="https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja" class="px-4 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800" data-i18n="cta.chat">Chat via WhatsApp</a>
+
           </div>
 
           <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300/90">
@@ -129,9 +235,7 @@
           </div>
         </div>
 
-        <aside class="lg:col-span-1 reveal delay-1">
-          <div class="rounded-2xl glass border border-slate-700 p-5 h-full">
-            <h3 class="text-white text-base font-semibold mb-3" data-i18n="hero.skillsTitle">Ringkas Keahlian</h3>
+
 
             <ul class="grid grid-cols-2 gap-2 text-xs">
               <li class="bg-slate-700/70 px-3 py-1 rounded-full" data-i18n="hero.skills.ticketing">Ticketing</li>
@@ -149,11 +253,9 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-16 md:py-20">
+    <section id="about" class="py-16 md:py-20" aria-labelledby="about-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="about.heading">Tentang Saya</span>
+
         </h2>
 
         <div class="mt-5 grid gap-6 lg:grid-cols-3">
@@ -180,11 +282,9 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="experience" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="experience-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="experience.heading">Pengalaman Kerja</span>
+
         </h2>
 
         <div class="mt-8 grid md:grid-cols-2 gap-6">
@@ -247,105 +347,22 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="projects" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="projects-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="projects.heading">Proyek Terpilih</span>
-        </h2>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.siloam.title">IT Managed Service – Siloam (All Units)</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.siloam.desc">Desain &amp; implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA &amp; Mistake Flags hingga monitoring mingguan.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-1">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.sla.title">Helpdesk SLA Improvement (98% SLA)</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.sla.desc">Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident &amp; service request, dilengkapi monitoring mistake dan sistem reporting otomatis.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-2">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.gkHebat.title">Network Infra – PT GK Hebat</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.gkHebat.desc">Instalasi radio wireless &amp; firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-3">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.centralizedInfra.title">Sentralisasi &amp; Implementasi Infrastruktur</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.centralizedInfra.desc">Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-4">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.assetManagement.title">Asset Management System</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.assetManagement.desc">Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.securityAwareness.title">Security Awareness Program</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.securityAwareness.desc">Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint &amp; Wi-Fi safety.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-1">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.trainer.title">Trainer – Enigmacamp (Danamon University)</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.trainer.desc">Pelatihan OS Linux &amp; Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD.</p>
-          </article>
-
-          <article class="rounded-2xl glass border border-slate-700 p-6 flex flex-col reveal delay-2">
-            <h3 class="text-white text-lg font-semibold" data-i18n="projects.hackathon.title">Hackathon TechConnect – Enigma x Sinar Mas</h3>
-            <p class="text-slate-200/90 text-sm mt-2" data-i18n="projects.hackathon.desc">IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar.</p>
-          </article>
-        </div>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="cert" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="cert" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="cert-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="certifications.heading">Sertifikasi &amp; Pembelajaran</span>
+
         </h2>
 
         <p class="text-xs text-slate-400 mt-2"><!-- TIP: Link sudah diisi. Tambah / ganti sesuai kebutuhan. --></p>
 
         <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="https://www.coursera.org/account/accomplishments/professional-cert/IND2C8ZPXWEZ" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-1 hover:ring-emerald-500/40 reveal">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.googleItSupport">Google IT Support</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
-          </a>
 
-          <a href="https://www.cyberacademy.id/certificate/WPTR0112244245" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.webPenTest">Web Penetration Testing</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
-          </a>
-
-          <a href="https://www.cyberacademy.id/certificate/NTPT0107242054" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.networkPenTest">Network Penetration Testing</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
-          </a>
-
-          <a href="https://www.coursera.org/account/accomplishments/specialization/JM58T9D5P9B1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-3">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.googlePmp">Google Project Management Specialization</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Google</span>
-          </a>
-
-          <a href="https://www.cyberacademy.id/certificate/DFA0103250752" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-4">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.digitalForensic">Digital Forensic Analyst</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
-          </a>
-
-          <a href="https://www.cyberacademy.id/certificate/SOCA0110243535" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.socAnalyst">Security Operation Center (SOC) Analyst</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Cyber Academy</span>
-          </a>
-
-          <a href="#" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-1">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.mtcna">MikroTik Certified Network Associate (ID 2301NA285)</span>
-            <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">MikroTik</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/799e0823-6faf-4ea5-a366-a845945d1562/linked_in_profile" target="_blank" class="rounded-2xl glass border border-slate-700 p-6 flex items-center justify-between hover:ring-emerald-500/40 reveal delay-2">
-            <span class="text-slate-200 text-sm" data-i18n="certifications.fortinet">Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)</span>
             <span class="bg-slate-700/80 px-3 py-1 rounded-full text-xs">Fortinet</span>
           </a>
         </div>
@@ -353,38 +370,20 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testi" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="testi" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="testi-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="testimonials.heading">Testimonial</span>
-        </h2>
-
-        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal">
-            <blockquote class="text-slate-200/90 text-sm" data-i18n="testimonials.items.0">“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Randi, Recruitment</figcaption>
-          </figure>
-
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal delay-1">
-            <blockquote class="text-slate-200/90 text-sm" data-i18n="testimonials.items.1">“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Pujo, IT Ops</figcaption>
-          </figure>
-
-          <figure class="rounded-2xl glass border border-slate-700 p-6 shadow-soft reveal delay-2">
-            <blockquote class="text-slate-200/90 text-sm" data-i18n="testimonials.items.2">“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”</blockquote>
-            <figcaption class="mt-4 text-xs text-slate-400">— Karis, GA</figcaption>
-          </figure>
+n
         </div>
+        <noscript>
+          <p class="text-sm text-slate-400 mt-4">Aktifkan JavaScript untuk melihat testimonial.</p>
+        </noscript>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-16 md:py-20 border-t border-slate-800/80">
+    <section id="contact" class="py-16 md:py-20 border-t border-slate-800/80" aria-labelledby="contact-title">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-semibold flex items-center gap-3 reveal">
-          <span class="h-5 w-5 rounded-full accent inline-block"></span>
-          <span data-i18n="contact.heading">Kontak</span>
+
         </h2>
 
         <div class="mt-8 rounded-2xl glass border border-slate-700 p-6 grid lg:grid-cols-2 gap-6 items-center reveal">
@@ -399,21 +398,162 @@
           </div>
 
           <div class="lg:justify-self-end flex flex-wrap gap-3 reveal delay-1">
-            <a href="CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf" class="px-4 py-2 rounded-lg text-white accent shadow-soft hover:opacity-90" target="_blank" download data-i18n="cta.downloadCv">Download CV (PDF-ID)</a>
+
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 border-t border-slate-800/80">
+  <footer class="py-10 border-t border-slate-800/80" role="contentinfo">
     <div class="max-w-6xl mx-auto px-4 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
       <p>© <span id="year"></span> Muhammad Fauzan. All rights reserved.</p>
-      <a href="#top" class="hover:text-slate-200" data-i18n="footer.backToTop">Kembali ke atas</a>
+in
     </div>
   </footer>
 
+  <script type="module" src="lib/testimonials.js"></script>
   <script>
+    // Dynamic project filtering based on role query parameter
+    const projectListEl = document.getElementById('projectList');
+    const projectsData = [
+      {
+        idTitle: 'IT Managed Service – Siloam (All Units)',
+        enTitle: 'IT Managed Service – Siloam (All Units)',
+        idDesc: 'Desain & implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA & Mistake Flags hingga monitoring mingguan.',
+        enDesc: 'Designed & implemented centralized IT Support: SOPs, access policy, and ticketing governance for 40+ units (78–80 engineers). Enforced SLAs & mistake flags with weekly monitoring.',
+        delayClass: '',
+        roles: ['infrastructure', 'helpdesk']
+      },
+      {
+        idTitle: 'Helpdesk SLA Improvement (98% SLA)',
+        enTitle: 'Helpdesk SLA Improvement (98% SLA)',
+        idDesc: 'Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident & service request, dilengkapi monitoring mistake dan sistem reporting otomatis.',
+        enDesc: 'Improved SLA and standardized ticketing SOPs to centralize incident & service requests, with mistake monitoring and automated reporting.',
+        delayClass: 'delay-1',
+        roles: ['helpdesk']
+      },
+      {
+        idTitle: 'Network Infra – PT GK Hebat',
+        enTitle: 'Network Infra – PT GK Hebat',
+        idDesc: 'Instalasi radio wireless & firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat.',
+        enDesc: 'Deployed wireless radio & firewall for 10 sites (26,000+ ha) in Kalimantan; centralized topology.',
+        delayClass: 'delay-2',
+        roles: ['infrastructure', 'security']
+      },
+      {
+        idTitle: 'Sentralisasi & Implementasi Infrastruktur',
+        enTitle: 'Centralized Infrastructure Implementation',
+        idDesc: 'Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging.',
+        enDesc: 'Standardized IT systems, MikroTik VPN tunneling, and ERP connectivity for 27 branches; topology docs, QoS, and asset tagging.',
+        delayClass: 'delay-3',
+        roles: ['infrastructure']
+      },
+      {
+        idTitle: 'Asset Management System',
+        enTitle: 'Asset Management System',
+        idDesc: 'Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat.',
+        enDesc: 'Built asset inventory system (Snipit): barcode labeling, digital signature, and device lifecycle tracking.',
+        delayClass: 'delay-4',
+        roles: ['helpdesk', 'security']
+      },
+      {
+        idTitle: 'Security Awareness Program',
+        enTitle: 'Security Awareness Program',
+        idDesc: 'Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety.',
+        enDesc: 'Monthly awareness: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety.',
+        delayClass: '',
+        roles: ['security', 'helpdesk']
+      },
+      {
+        idTitle: 'Trainer – Enigmacamp (Danamon University)',
+        enTitle: 'Trainer – Enigmacamp (Danamon University)',
+        idDesc: 'Pelatihan OS Linux & Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD.',
+        enDesc: 'Linux & Windows Server training (3 days): CLI, basic networking, shell scripting, file sharing, and AD concepts.',
+        delayClass: 'delay-1',
+        roles: []
+      },
+      {
+        idTitle: 'Hackathon TechConnect – Enigma x Sinar Mas',
+        enTitle: 'Hackathon TechConnect – Enigma x Sinar Mas',
+        idDesc: 'IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar.',
+        enDesc: 'IT ops event: participant laptop setup, network readiness, and technical coordination to ensure smooth operations.',
+        delayClass: 'delay-2',
+        roles: []
+      }
+    ];
+
+    const renderProjects = () => {
+      if (!projectListEl) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const rawRole = params.get('role')?.toLowerCase() ?? '';
+      const allowedRoles = ['infrastructure', 'helpdesk', 'security'];
+      const activeRole = allowedRoles.includes(rawRole) ? rawRole : null;
+
+      const selectedProjects = activeRole
+        ? (() => {
+            const prioritized = projectsData.filter(project => project.roles.includes(activeRole)).slice(0, 3);
+            if (prioritized.length < 3) {
+              for (const project of projectsData) {
+                if (prioritized.length === 3) break;
+                if (prioritized.includes(project)) continue;
+                prioritized.push(project);
+              }
+            }
+            return prioritized;
+          })()
+        : projectsData;
+
+      projectListEl.innerHTML = '';
+
+      selectedProjects.forEach((project, index) => {
+        const article = document.createElement('article');
+        const delayClass = activeRole
+          ? (index === 0 ? '' : `delay-${index}`)
+          : project.delayClass;
+
+        article.className = [
+          'rounded-2xl',
+          'glass',
+          'border',
+          'border-slate-700',
+          'p-6',
+          'flex',
+          'flex-col',
+          'reveal',
+          delayClass || ''
+        ].filter(Boolean).join(' ');
+
+        const titleId = document.createElement('h3');
+        titleId.className = 'text-white text-lg font-semibold t t-id';
+        titleId.textContent = project.idTitle;
+
+        const titleEn = document.createElement('h3');
+        titleEn.className = 'text-white text-lg font-semibold t t-en';
+        titleEn.textContent = project.enTitle;
+
+        const descId = document.createElement('p');
+        descId.className = 'text-slate-200/90 text-sm mt-2 t t-id';
+        descId.textContent = project.idDesc;
+
+        const descEn = document.createElement('p');
+        descEn.className = 'text-slate-200/90 text-sm mt-2 t t-en';
+        descEn.textContent = project.enDesc;
+
+        article.append(titleId, titleEn, descId, descEn);
+        projectListEl.append(article);
+      });
+
+      if (activeRole) {
+        projectListEl.setAttribute('data-filter-role', activeRole);
+      } else {
+        projectListEl.removeAttribute('data-filter-role');
+      }
+    };
+
+    renderProjects();
+
     // Tahun footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -433,279 +573,29 @@
     const supportedLangs = new Set(['id', 'en']);
     const langBtn = document.getElementById('langToggle');
 
-    const fallbackTranslations = {
-      id: {
-        "meta": {
-          "title": "Muhammad Fauzan – IT Infrastructure & Support",
-          "description": "Portfolio & CV Online – Muhammad Fauzan (IT Infrastructure & Support, Project Management, Networking, Helpdesk).",
-          "ogTitle": "Muhammad Fauzan – IT Infrastructure & Support",
-          "ogDescription": "10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)."
-        },
-        "nav": {
-          "about": "Tentang",
-          "experience": "Pengalaman",
-          "projects": "Proyek",
-          "certifications": "Sertifikasi",
-          "testimonials": "Testimonial",
-          "contact": "Kontak",
-          "cv": {
-            "text": "CV (PDF-ID)",
-            "attrs": {
-              "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf"
-            }
-          }
-        },
-        "controls": {
-          "langToggle": "ID / EN"
-        },
-        "cta": {
-          "downloadCv": {
-            "text": "Download CV (PDF-ID)",
-            "attrs": {
-              "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf"
-            }
-          },
-          "chat": {
-            "text": "Chat via WhatsApp",
-            "attrs": {
-              "href": "https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja"
-            }
-          }
-        },
-        "hero": {
-          "subtitle": "IT Infrastructure & Support · Project Management",
-          "intro": "Halo, perkenalkan saya <strong>Muhammad Fauzan</strong>, atau biasa dipanggil <strong>Ojan</strong>.<br>\n            Saya memiliki pengalaman lebih dari <strong>10 tahun</strong> di bidang <strong>IT Support dan Infrastruktur</strong>.",
-          "location": "📍 Greater Jakarta, Indonesia",
-          "skillsTitle": "Ringkas Keahlian",
-          "skills": {
-            "ticketing": "Ticketing",
-            "assetControl": "Asset & Inventory Control",
-            "monitoring": "System Monitoring",
-            "network": "Network Infrastructure",
-            "procurement": "IT Procurement & Asset Tagging",
-            "documentation": "Documentation & SOP Standardization",
-            "penetration": "Network Penetration Testing",
-            "sla": "SLA Management & Escalation Flow"
-          }
-        },
-        "about": {
-          "heading": "Tentang Saya",
-          "story": "Saya adalah lulusan <strong>Universitas Bina Nusantara</strong>, jurusan <strong>Sistem Informasi</strong>, lulus pada tahun <strong>2015</strong>.<br>\n            Setelah itu, saya memulai karier di dunia <strong>IT Support</strong> dan hingga kini telah menekuni bidang ini lebih dari <strong>10 tahun</strong>.<br><br>\n            Saya menikmati peran sebagai IT Support karena setiap hari saya dapat berinteraksi dengan banyak orang dari berbagai divisi — bukan hanya membantu menyelesaikan kendala teknis, tetapi juga membangun hubungan kerja yang baik dengan seluruh tim.<br><br>\n            Selain menangani troubleshooting harian, saya juga terus mengembangkan kemampuan saya di bidang <strong>networking</strong> dan <strong>cyber security</strong>. Bagi saya, pekerjaan IT Support tidak hanya sebatas memperbaiki masalah, tetapi juga mencakup <strong>pendokumentasian yang baik</strong>, <strong>pengelolaan aset</strong>, <strong>monitoring sistem</strong>, dan memastikan <strong>keamanan infrastruktur</strong> perusahaan tetap terjaga.<br><br>\n            Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, dan dokumentasi yang rapi adalah kunci untuk menciptakan lingkungan IT yang stabil dan efisien.",
-          "focusTitle": "Fokus Saat Ini",
-          "focus": [
-            "• Mencari peluang kerja yang sejalan dengan pengalaman & visi saya",
-            "• Membangun koneksi profesional di LinkedIn & komunitas IT",
-            "• Mengikuti pelatihan & sertifikasi profesional (Fortinet, ITIL, Cyber Academy)",
-            "• Mengikuti course & pelatihan untuk mengejar perkembangan teknologi baru"
-          ]
-        },
-        "experience": {
-          "heading": "Pengalaman Kerja",
-          "projectManager": {
-            "title": "Project Manager – IT Support & Helpdesk",
-            "period": "Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025",
-            "points": [
-              "Transisi managed-service untuk 40+ RS, 78–80 IT Support & 7 Helpdesk.",
-              "Aturan SLA & Mistake Flags; dashboard tiket mingguan.",
-              "Koordinasi shifting nasional, backup roster, dan eskalasi HO ICT/IT Ops."
-            ],
-            "tags": {
-              "leadership": "Leadership",
-              "reporting": "Reporting",
-              "access": "Manajemen Akses"
-            }
-          },
-          "infrastructureLead": {
-            "title": "IT Infrastructure & Support Lead",
-            "period": "PT Enigma Cipta Humanika · 03/2025 – 10/2025",
-            "points": [
-              "Administrasi LAN/WAN, WAP, dan VPN; troubleshooting HW/SW.",
-              "Kelola aset & inventory multi-cabang; pengadaan, tagging, maintenance.",
-              "Monitoring uptime (Zabbix/PRTG) & peningkatan produktivitas."
-            ],
-            "tags": {
-              "security": "Security",
-              "asset": "Asset Management"
-            }
-          },
-          "itSupport": {
-            "title": "IT Support",
-            "period": "PT Mitra Bersama Jaya · 08/2015 – 02/2022",
-            "points": [
-              "Support on-site: troubleshooting perangkat, jaringan, server dasar.",
-              "MDM berbasis Avast Console untuk kebijakan endpoint.",
-              "Dukungan event & operasional harian lintas departemen."
-            ]
-          }
-        },
-        "projects": {
-          "heading": "Proyek Terpilih",
-          "siloam": {
-            "title": "IT Managed Service – Siloam (All Units)",
-            "desc": "Desain & implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA & Mistake Flags hingga monitoring mingguan."
-          },
-          "sla": {
-            "title": "Helpdesk SLA Improvement (98% SLA)",
-            "desc": "Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident & service request, dilengkapi monitoring mistake dan sistem reporting otomatis."
-          },
-          "gkHebat": {
-            "title": "Network Infra – PT GK Hebat",
-            "desc": "Instalasi radio wireless & firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat."
-          },
-          "centralizedInfra": {
-            "title": "Sentralisasi & Implementasi Infrastruktur",
-            "desc": "Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging."
-          },
-          "assetManagement": {
-            "title": "Asset Management System",
-            "desc": "Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat."
-          },
-          "securityAwareness": {
-            "title": "Security Awareness Program",
-            "desc": "Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety."
-          },
-          "trainer": {
-            "title": "Trainer – Enigmacamp (Danamon University)",
-            "desc": "Pelatihan OS Linux & Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD."
-          },
-          "hackathon": {
-            "title": "Hackathon TechConnect – Enigma x Sinar Mas",
-            "desc": "IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar."
-          }
-        },
-        "certifications": {
-          "heading": "Sertifikasi & Pembelajaran",
-          "googleItSupport": "Google IT Support",
-          "webPenTest": "Web Penetration Testing",
-          "networkPenTest": "Network Penetration Testing",
-          "googlePmp": "Google Project Management Specialization",
-          "digitalForensic": "Digital Forensic Analyst",
-          "socAnalyst": "Security Operation Center (SOC) Analyst",
-          "mtcna": "MikroTik Certified Network Associate (ID 2301NA285)",
-          "fortinet": "Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)"
-        },
-        "testimonials": {
-          "heading": "Testimonial",
-          "items": [
-            "“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”",
-            "“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”",
-            "“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”"
-          ]
-        },
-        "contact": {
-          "heading": "Kontak",
-          "message": "Silakan hubungi saya untuk informasi lebih lanjut atau peluang kerja yang sesuai dengan pengalaman saya."
-        },
-        "footer": {
-          "backToTop": "Kembali ke atas"
-        }
-      }
-    };
-    fallbackTranslations.en = fallbackTranslations.id;
-
-    const translationCache = new Map();
-
-    const getNestedValue = (obj, path) => {
-      return path.split('.').reduce((acc, key) => (acc && key in acc) ? acc[key] : undefined, obj);
-    };
-
-    const applyTranslationValue = (el, value) => {
-      if (value == null) return;
-
-      const attrSpec = el.dataset.i18nAttr;
-      const type = el.dataset.i18nType;
-
-      if (attrSpec) {
-        const attrs = attrSpec.split(',').map(a => a.trim()).filter(Boolean);
-        if (!attrs.length) return;
-
-        if (typeof value === 'string') {
-          attrs.forEach(attr => el.setAttribute(attr, value));
-        } else if (typeof value === 'object' && !Array.isArray(value)) {
-          attrs.forEach(attr => {
-            if (value[attr] != null) {
-              el.setAttribute(attr, value[attr]);
-            }
-          });
-        }
-        return;
-      }
-
-      if (typeof value === 'object' && !Array.isArray(value)) {
-        if (value.attrs && typeof value.attrs === 'object') {
-          Object.entries(value.attrs).forEach(([attr, attrValue]) => {
-            el.setAttribute(attr, attrValue);
-          });
-        }
-        if (value.html != null) {
-          el.innerHTML = value.html;
-          return;
-        }
-        if (value.text != null) {
-          el.textContent = value.text;
-          return;
-        }
-      }
-
-      if (type === 'html') {
-        el.innerHTML = value;
-      } else {
-        el.textContent = value;
-      }
-    };
-
-    const applyTranslations = (translations) => {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        const value = getNestedValue(translations, key);
-        applyTranslationValue(el, value);
-      });
-    };
-
-    const fetchTranslations = async (lang) => {
-      if (translationCache.has(lang)) {
-        return translationCache.get(lang);
-      }
-
-      const fallback = fallbackTranslations[lang] || fallbackTranslations[defaultLang] || {};
-
-      try {
-        const response = await fetch(`i18n/${lang}.json`, { cache: 'no-store' });
-        if (!response.ok) throw new Error('Failed to load translations');
-        const data = await response.json();
-        translationCache.set(lang, data);
-        return data;
-      } catch (error) {
-        console.warn(`[i18n] memakai fallback untuk bahasa ${lang}:`, error);
-        translationCache.set(lang, fallback);
-        return fallback;
-      }
-    };
-
-    const setLanguage = async (lang, { persist = true } = {}) => {
-      const targetLang = supportedLangs.has(lang) ? lang : defaultLang;
-      const translations = await fetchTranslations(targetLang);
-      root.setAttribute('data-lang', targetLang);
-      root.setAttribute('lang', targetLang);
-      applyTranslations(translations);
-      if (persist) {
-        localStorage.setItem('lang', targetLang);
-      }
-    };
-
-    const savedLang = localStorage.getItem('lang') || defaultLang;
-    setLanguage(savedLang, { persist: false });
 
     langBtn?.addEventListener('click', () => {
       const current = root.getAttribute('data-lang');
       const next = current === 'en' ? 'id' : 'en';
-      setLanguage(next);
+
     });
 
-    // Tampilkan logo bila avatar.jpg tersedia
-    fetch('avatar.jpg', { method:'HEAD' })
-      .then(r => { if (r.ok) document.getElementById('logoImg').classList.remove('hidden'); })
-      .catch(() => {});
+    // Tampilkan logo bila avatar.jpg tersedia tanpa menyebabkan layout shift
+    const logoImg = document.getElementById('logoImg');
+    const logoSlot = logoImg?.closest('.logo-slot');
+    const revealLogo = () => logoSlot?.classList.add('has-image');
+    if (logoImg && logoSlot) {
+      if (logoImg.complete && logoImg.naturalWidth > 0) {
+        revealLogo();
+      } else {
+        logoImg.addEventListener('load', revealLogo, { once: true });
+      }
+
+      logoImg.addEventListener('error', () => {
+        logoSlot.classList.remove('has-image');
+        logoSlot.classList.add('logo-missing');
+      }, { once: true });
+    }
 
     // Animasi reveal saat scroll
     const motionQuery = typeof window.matchMedia === 'function'
@@ -734,6 +624,26 @@
 
     initRevealAnimations();
     motionQuery.addEventListener?.('change', initRevealAnimations);
+
+    // Analytics event bindings
+    const trackEvent = (name, label) => {
+      if (typeof window.plausible !== 'function') return;
+      if (label) {
+        window.plausible(name, { props: { label } });
+      } else {
+        window.plausible(name);
+      }
+    };
+
+    document.querySelectorAll('[data-analytics-event]')
+      .forEach(el => {
+        el.addEventListener('click', () => {
+          const name = el.getAttribute('data-analytics-event');
+          if (!name) return;
+          const label = el.getAttribute('data-analytics-label') || undefined;
+          trackEvent(name, label);
+        });
+      });
   </script>
 </body>
 </html>
