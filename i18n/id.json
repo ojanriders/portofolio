@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "title": "Muhammad Fauzan – IT Infrastructure & Support",
+    "description": "Portfolio & CV Online – Muhammad Fauzan (IT Infrastructure & Support, Project Management, Networking, Helpdesk).",
+    "ogTitle": "Muhammad Fauzan – IT Infrastructure & Support",
+    "ogDescription": "10+ tahun pengalaman IT Support & Infrastruktur. Eks-Project Manager managed-service Siloam (40+ unit, 80+ engineer)."
+  },
+  "nav": {
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "certifications": "Sertifikasi",
+    "testimonials": "Testimonial",
+    "contact": "Kontak",
+    "cv": {
+      "text": "CV (PDF-ID)",
+      "attrs": {
+        "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf"
+      }
+    }
+  },
+  "controls": {
+    "langToggle": "ID / EN"
+  },
+  "cta": {
+    "downloadCv": {
+      "text": "Download CV (PDF-ID)",
+      "attrs": {
+        "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_ID.pdf"
+      }
+    },
+    "chat": {
+      "text": "Chat via WhatsApp",
+      "attrs": {
+        "href": "https://wa.me/6281296070148?text=Halo%20Fauzan,%20saya%20tertarik%20membahas%20kesempatan%20kerja"
+      }
+    }
+  },
+  "hero": {
+    "subtitle": "IT Infrastructure & Support · Project Management",
+    "intro": "Halo, perkenalkan saya <strong>Muhammad Fauzan</strong>, atau biasa dipanggil <strong>Ojan</strong>.<br>\n            Saya memiliki pengalaman lebih dari <strong>10 tahun</strong> di bidang <strong>IT Support dan Infrastruktur</strong>.",
+    "location": "📍 Greater Jakarta, Indonesia",
+    "skillsTitle": "Ringkas Keahlian",
+    "skills": {
+      "ticketing": "Ticketing",
+      "assetControl": "Asset & Inventory Control",
+      "monitoring": "System Monitoring",
+      "network": "Network Infrastructure",
+      "procurement": "IT Procurement & Asset Tagging",
+      "documentation": "Documentation & SOP Standardization",
+      "penetration": "Network Penetration Testing",
+      "sla": "SLA Management & Escalation Flow"
+    }
+  },
+  "about": {
+    "heading": "Tentang Saya",
+    "story": "Saya adalah lulusan <strong>Universitas Bina Nusantara</strong>, jurusan <strong>Sistem Informasi</strong>, lulus pada tahun <strong>2015</strong>.<br>\n            Setelah itu, saya memulai karier di dunia <strong>IT Support</strong> dan hingga kini telah menekuni bidang ini lebih dari <strong>10 tahun</strong>.<br><br>\n            Saya menikmati peran sebagai IT Support karena setiap hari saya dapat berinteraksi dengan banyak orang dari berbagai divisi — bukan hanya membantu menyelesaikan kendala teknis, tetapi juga membangun hubungan kerja yang baik dengan seluruh tim.<br><br>\n            Selain menangani troubleshooting harian, saya juga terus mengembangkan kemampuan saya di bidang <strong>networking</strong> dan <strong>cyber security</strong>. Bagi saya, pekerjaan IT Support tidak hanya sebatas memperbaiki masalah, tetapi juga mencakup <strong>pendokumentasian yang baik</strong>, <strong>pengelolaan aset</strong>, <strong>monitoring sistem</strong>, dan memastikan <strong>keamanan infrastruktur</strong> perusahaan tetap terjaga.<br><br>\n            Saya percaya bahwa kombinasi antara kemampuan teknis, komunikasi yang efektif, dan dokumentasi yang rapi adalah kunci untuk menciptakan lingkungan IT yang stabil dan efisien.",
+    "focusTitle": "Fokus Saat Ini",
+    "focus": [
+      "• Mencari peluang kerja yang sejalan dengan pengalaman & visi saya",
+      "• Membangun koneksi profesional di LinkedIn & komunitas IT",
+      "• Mengikuti pelatihan & sertifikasi profesional (Fortinet, ITIL, Cyber Academy)",
+      "• Mengikuti course & pelatihan untuk mengejar perkembangan teknologi baru"
+    ]
+  },
+  "experience": {
+    "heading": "Pengalaman Kerja",
+    "projectManager": {
+      "title": "Project Manager – IT Support & Helpdesk",
+      "period": "Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025",
+      "points": [
+        "Transisi managed-service untuk 40+ RS, 78–80 IT Support & 7 Helpdesk.",
+        "Aturan SLA & Mistake Flags; dashboard tiket mingguan.",
+        "Koordinasi shifting nasional, backup roster, dan eskalasi HO ICT/IT Ops."
+      ],
+      "tags": {
+        "leadership": "Leadership",
+        "reporting": "Reporting",
+        "access": "Manajemen Akses"
+      }
+    },
+    "infrastructureLead": {
+      "title": "IT Infrastructure & Support Lead",
+      "period": "PT Enigma Cipta Humanika · 03/2025 – 10/2025",
+      "points": [
+        "Administrasi LAN/WAN, WAP, dan VPN; troubleshooting HW/SW.",
+        "Kelola aset & inventory multi-cabang; pengadaan, tagging, maintenance.",
+        "Monitoring uptime (Zabbix/PRTG) & peningkatan produktivitas."
+      ],
+      "tags": {
+        "security": "Security",
+        "asset": "Asset Management"
+      }
+    },
+    "itSupport": {
+      "title": "IT Support",
+      "period": "PT Mitra Bersama Jaya · 08/2015 – 02/2022",
+      "points": [
+        "Support on-site: troubleshooting perangkat, jaringan, server dasar.",
+        "MDM berbasis Avast Console untuk kebijakan endpoint.",
+        "Dukungan event & operasional harian lintas departemen."
+      ]
+    }
+  },
+  "projects": {
+    "heading": "Proyek Terpilih",
+    "siloam": {
+      "title": "IT Managed Service – Siloam (All Units)",
+      "desc": "Desain & implementasi sistem IT Support terpusat: SOP, kebijakan akses, ticketing governance untuk 40+ unit (78–80 engineer). Penerapan SLA & Mistake Flags hingga monitoring mingguan."
+    },
+    "sla": {
+      "title": "Helpdesk SLA Improvement (98% SLA)",
+      "desc": "Peningkatan SLA dan standarisasi SOP ticketing untuk centralisasi laporan incident & service request, dilengkapi monitoring mistake dan sistem reporting otomatis."
+    },
+    "gkHebat": {
+      "title": "Network Infra – PT GK Hebat",
+      "desc": "Instalasi radio wireless & firewall untuk 10 site (26.000+ ha) di Kalimantan; topologi terpusat."
+    },
+    "centralizedInfra": {
+      "title": "Sentralisasi & Implementasi Infrastruktur",
+      "desc": "Standarisasi sistem IT, VPN tunneling MikroTik, dan konektivitas ERP untuk 27 cabang; dokumentasi topologi, QoS, dan asset tagging."
+    },
+    "assetManagement": {
+      "title": "Asset Management System",
+      "desc": "Membangun sistem inventory aset (Snipit): barcode labeling, digital signature, dan pelacakan lifecycle perangkat."
+    },
+    "securityAwareness": {
+      "title": "Security Awareness Program",
+      "desc": "Edukasi bulanan: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety."
+    },
+    "trainer": {
+      "title": "Trainer – Enigmacamp (Danamon University)",
+      "desc": "Pelatihan OS Linux & Windows Server (3 hari): CLI, networking dasar, shell scripting, file sharing, dan konsep AD."
+    },
+    "hackathon": {
+      "title": "Hackathon TechConnect – Enigma x Sinar Mas",
+      "desc": "IT ops event: penyiapan laptop peserta, jaringan, dan koordinasi teknis agar kegiatan berjalan lancar."
+    }
+  },
+  "certifications": {
+    "heading": "Sertifikasi & Pembelajaran",
+    "googleItSupport": "Google IT Support",
+    "webPenTest": "Web Penetration Testing",
+    "networkPenTest": "Network Penetration Testing",
+    "googlePmp": "Google Project Management Specialization",
+    "digitalForensic": "Digital Forensic Analyst",
+    "socAnalyst": "Security Operation Center (SOC) Analyst",
+    "mtcna": "MikroTik Certified Network Associate (ID 2301NA285)",
+    "fortinet": "Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)"
+  },
+  "testimonials": {
+    "heading": "Testimonial",
+    "items": [
+      "“Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.”",
+      "“Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.”",
+      "“Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.”"
+    ]
+  },
+  "contact": {
+    "heading": "Kontak",
+    "message": "Silakan hubungi saya untuk informasi lebih lanjut atau peluang kerja yang sesuai dengan pengalaman saya."
+  },
+  "footer": {
+    "backToTop": "Kembali ke atas"
+  }
+}
