@@ -1,0 +1,26 @@
+[
+  {
+    "id": "randi-recruitment",
+    "author": "— Randi, Recruitment",
+    "quotes": {
+      "id": "Fauzan cepat tanggap dan rapi dokumentasi. Eskalasi helpdesk jadi jauh lebih tertib.",
+      "en": "Fauzan responds quickly and keeps documentation neat. Helpdesk escalations became far more organized."
+    }
+  },
+  {
+    "id": "pujo-it-ops",
+    "author": "— Pujo, IT Ops",
+    "quotes": {
+      "id": "Koordinasi shifting nasional mulus. Komunikatif dan bisa diandalkan saat event padat.",
+      "en": "Nationwide shift coordination was smooth. Communicative and reliable during busy events."
+    }
+  },
+  {
+    "id": "karis-ga",
+    "author": "— Karis, GA",
+    "quotes": {
+      "id": "Proaktif memberi solusi; dari jaringan sampai MDM semua tertangani.",
+      "en": "Proactive in providing solutions; from networking to MDM, everything was handled."
+    }
+  }
+]

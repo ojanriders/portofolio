@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "title": "Muhammad Fauzan – IT Infrastructure & Support",
+    "description": "Online Portfolio & CV – Muhammad Fauzan (IT Infrastructure & Support, Project Management, Networking, Helpdesk).",
+    "ogTitle": "Muhammad Fauzan – IT Infrastructure & Support",
+    "ogDescription": "10+ years of IT Support & Infrastructure experience. Former managed-service Project Manager for Siloam (40+ units, 80+ engineers)."
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "cv": {
+      "text": "CV (PDF-EN)",
+      "attrs": {
+        "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf"
+      }
+    }
+  },
+  "controls": {
+    "langToggle": "EN / ID"
+  },
+  "cta": {
+    "downloadCv": {
+      "text": "Download CV (PDF-EN)",
+      "attrs": {
+        "href": "CV_Muhammad_Fauzan_Updated_Nov_2025_EN.pdf"
+      }
+    },
+    "chat": {
+      "text": "Chat via WhatsApp",
+      "attrs": {
+        "href": "https://wa.me/6281296070148?text=Hi%20Fauzan,%20I%20would%20like%20to%20discuss%20an%20opportunity"
+      }
+    }
+  },
+  "hero": {
+    "subtitle": "IT Infrastructure & Support · Project Management",
+    "intro": "Hi, I’m <strong>Muhammad Fauzan</strong> (you can call me <strong>Ojan</strong>).<br>\n            I have over <strong>10 years</strong> of experience in <strong>IT Support and Infrastructure</strong>.",
+    "location": "📍 Greater Jakarta, Indonesia",
+    "skillsTitle": "Key Skills",
+    "skills": {
+      "ticketing": "Ticketing",
+      "assetControl": "Asset & Inventory Control",
+      "monitoring": "System Monitoring",
+      "network": "Network Infrastructure",
+      "procurement": "IT Procurement & Asset Tagging",
+      "documentation": "Documentation & SOP Standardization",
+      "penetration": "Network Penetration Testing",
+      "sla": "SLA Management & Escalation Flow"
+    }
+  },
+  "about": {
+    "heading": "About Me",
+    "story": "I graduated from <strong>Bina Nusantara University</strong>, majoring in <strong>Information Systems</strong> (class of <strong>2015</strong>).<br>\n            Since then, I’ve built a career in <strong>IT Support</strong> and have spent over <strong>10 years</strong> in this field.<br><br>\n            I enjoy working in IT Support because I get to collaborate with people across different departments — not only fixing technical issues, but also building strong working relationships.<br><br>\n            Beyond daily troubleshooting, I continuously develop my skills in <strong>networking</strong> and <strong>cyber security</strong>. For me, IT Support also means <strong>good documentation</strong>, <strong>asset management</strong>, <strong>system monitoring</strong>, and ensuring <strong>infrastructure security</strong> remains robust.<br><br>\n            I believe a combination of technical capability, clear communication, and disciplined documentation is essential for a stable and efficient IT environment.",
+    "focusTitle": "Current Focus",
+    "focus": [
+      "• Exploring roles aligned with my experience & career vision",
+      "• Building professional connections on LinkedIn & IT communities",
+      "• Attending professional trainings & certifications (Fortinet, ITIL, Cyber Academy)",
+      "• Taking courses to keep up with new technologies"
+    ]
+  },
+  "experience": {
+    "heading": "Work Experience",
+    "projectManager": {
+      "title": "Project Manager – IT Support & Helpdesk",
+      "period": "Siloam Hospitals Group (via Enigma) · 08/2025 – 11/2025",
+      "points": [
+        "Managed-service transition for 40+ hospitals, 78–80 IT Support & 7 Helpdesk.",
+        "SLA rules & mistake flags; weekly ticket dashboards.",
+        "Nationwide shift coordination, backup rosters, and HO ICT/IT Ops escalation."
+      ],
+      "tags": {
+        "leadership": "Leadership",
+        "reporting": "Reporting",
+        "access": "Access Management"
+      }
+    },
+    "infrastructureLead": {
+      "title": "IT Infrastructure & Support Lead",
+      "period": "PT Enigma Cipta Humanika · 03/2025 – 10/2025",
+      "points": [
+        "LAN/WAN, WAP, and VPN administration; HW/SW troubleshooting.",
+        "Multi-branch asset & inventory management; procurement, tagging, maintenance.",
+        "Uptime monitoring (Zabbix/PRTG) & productivity improvements."
+      ],
+      "tags": {
+        "security": "Security",
+        "asset": "Asset Management"
+      }
+    },
+    "itSupport": {
+      "title": "IT Support",
+      "period": "PT Mitra Bersama Jaya · 08/2015 – 02/2022",
+      "points": [
+        "On-site support: hardware, network, and basic server troubleshooting.",
+        "Avast Console-based MDM for endpoint policy.",
+        "Event support & daily operations across departments."
+      ]
+    }
+  },
+  "projects": {
+    "heading": "Selected Projects",
+    "siloam": {
+      "title": "IT Managed Service – Siloam (All Units)",
+      "desc": "Designed & implemented centralized IT Support: SOPs, access policy, and ticketing governance for 40+ units (78–80 engineers). Enforced SLAs & mistake flags with weekly monitoring."
+    },
+    "sla": {
+      "title": "Helpdesk SLA Improvement (98% SLA)",
+      "desc": "Improved SLA and standardized ticketing SOPs to centralize incident & service requests, with mistake monitoring and automated reporting."
+    },
+    "gkHebat": {
+      "title": "Network Infra – PT GK Hebat",
+      "desc": "Deployed wireless radio & firewall for 10 sites (26,000+ ha) in Kalimantan; centralized topology."
+    },
+    "centralizedInfra": {
+      "title": "Centralized Infrastructure Implementation",
+      "desc": "Standardized IT systems, MikroTik VPN tunneling, and ERP connectivity for 27 branches; topology docs, QoS, and asset tagging."
+    },
+    "assetManagement": {
+      "title": "Asset Management System",
+      "desc": "Built asset inventory system (Snipit): barcode labeling, digital signature, and device lifecycle tracking."
+    },
+    "securityAwareness": {
+      "title": "Security Awareness Program",
+      "desc": "Monthly awareness: malware, phishing, ransomware, password hygiene, endpoint & Wi-Fi safety."
+    },
+    "trainer": {
+      "title": "Trainer – Enigmacamp (Danamon University)",
+      "desc": "Linux & Windows Server training (3 days): CLI, basic networking, shell scripting, file sharing, and AD concepts."
+    },
+    "hackathon": {
+      "title": "Hackathon TechConnect – Enigma x Sinar Mas",
+      "desc": "IT ops event: participant laptop setup, network readiness, and technical coordination to ensure smooth operations."
+    }
+  },
+  "certifications": {
+    "heading": "Certifications & Learning",
+    "googleItSupport": "Google IT Support",
+    "webPenTest": "Web Penetration Testing",
+    "networkPenTest": "Network Penetration Testing",
+    "googlePmp": "Google Project Management Specialization",
+    "digitalForensic": "Digital Forensic Analyst",
+    "socAnalyst": "Security Operation Center (SOC) Analyst",
+    "mtcna": "MikroTik Certified Network Associate (ID 2301NA285)",
+    "fortinet": "Fortinet – Introduction to the Threat Landscape 3.0 (NSE1)"
+  },
+  "testimonials": {
+    "heading": "Testimonials",
+    "items": [
+      "“Fauzan responds quickly and keeps documentation neat. Helpdesk escalations became far more organized.”",
+      "“Nationwide shift coordination was smooth. Communicative and reliable during busy events.”",
+      "“Proactive in providing solutions; from networking to MDM, everything was handled.”"
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "message": "Feel free to reach out for more information or opportunities aligned with my experience."
+  },
+  "footer": {
+    "backToTop": "Back to top"
+  }
+}
