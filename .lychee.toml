@@ -1,0 +1,10 @@
+[core]
+base = "."
+max-redirects = 10
+accept = ["200..299", "403", "429"]
+exclude = ["mailto:*", "tel:*"]
+user-agent = "lychee-action"
+
+[inputs]
+include = ["index.html", "README.md"]
+exclude-path = ["node_modules"]
