@@ -42,8 +42,8 @@ jobs:
 
       - name: Ensure repository is clean
         run: |
-          if ! git diff --quiet; then
-            echo "Image optimization script made changes. Please run 'npm run optimize:images' locally and commit the results." >&2
-            git --no-pager diff
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Image optimization script made changes or created new files. Please run 'npm run optimize:images' locally and commit the results." >&2
+            git status --short
             exit 1
           fi
