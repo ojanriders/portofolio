@@ -65,6 +65,7 @@
     .logo-fallback{transition:opacity .3s ease;}
     .logo-slot.has-image .logo-fallback{opacity:0;}
     .logo-slot.logo-missing{border-color:rgba(148,163,184,.35);}
+    .logo-picture{position:absolute;inset:0;display:block;}
     .logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
     .logo-slot.has-image .logo-img{opacity:1;}
 
@@ -185,10 +186,13 @@
   <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-base-900/70 backdrop-blur" id="siteHeader" role="banner">
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Navigasi utama">
       <div class="flex items-center gap-3">
-        <!-- Upload avatar.jpg (sejajar index.html) untuk logo foto -->
+        <!-- Upload avatar.jpg (webp akan dibuat otomatis) untuk logo foto -->
         <span class="logo-slot">
           <span class="logo-fallback" aria-hidden="true">F</span>
-          <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" width="32" height="32" class="logo-img" loading="lazy">
+          <picture class="logo-picture">
+            <source srcset="avatar.webp" type="image/webp">
+            <img id="logoImg" src="avatar.jpg" alt="Foto profil Fauzan" width="32" height="32" class="logo-img" loading="lazy" decoding="async">
+          </picture>
         </span>
         <a href="#mainContent" class="font-semibold tracking-tight text-white">Fauzan<span class="text-accent">.IT</span></a>
       </div>
